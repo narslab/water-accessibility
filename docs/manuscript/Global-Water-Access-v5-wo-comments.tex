@@ -1,0 +1,422 @@
+\documentclass[10pt,twoside]{article}
+\usepackage{etex, {soul}}
+\newcommand{\num}{6{} }
+
+\raggedbottom
+
+%geometry (sets margin) and other useful packages
+\usepackage{geometry}
+\geometry{top=.8in, left=.8in,right=.8in,bottom=.8in}
+ \usepackage{graphicx,booktabs,calc}
+
+%=== GRAPHICS PATH ===========
+%\graphicspath{{./140408-Images/}}
+% Marginpar width
+%Marginpar width
+\newcommand{\pts}[1]{\marginpar{ \small\hspace{0pt} \textit{[#1]} } }
+\setlength{\marginparwidth}{.5in}
+%\reversemarginpar
+%\setlength{\marginparsep}{.02in}
+
+%% Fonts
+% \usepackage{fourier}
+% \usepackage[T1]{pbsi}
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+%\usepackage{minted}
+
+\usepackage{rotating}
+%% Cite Title
+\usepackage[style=authoryear,backend=biber, natbib,maxcitenames=2,doi=false,isbn=false,url=false,eprint=false]{biblatex}
+\addbibresource{../References/Water-Accessibility.bib}
+
+%%% Counters
+\usepackage{chngcntr,mathtools}
+\counterwithout{figure}{section}
+\counterwithout{table}{section}
+
+\numberwithin{equation}{section}
+
+%% Captions
+\usepackage{caption}
+\captionsetup{
+  labelsep=quad,
+  justification=raggedright,
+  labelfont=sc
+}
+
+%AMS-TeX packages
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage{bm}
+\usepackage[mathscr]{eucal}
+\usepackage{colortbl}
+\usepackage{color}
+
+
+\usepackage{epstopdf,subfigure,hyperref,enumerate,polynom,polynomial}
+\usepackage{multirow,minitoc,fancybox,array,multicol}
+
+\definecolor{slblue}{rgb}{0,.3,.62}
+\hypersetup{
+    colorlinks,%
+    citecolor=blue,%
+    filecolor=blue,%
+    linkcolor=blue,
+    urlcolor=slblue
+}
+
+%%%TIKZ
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{pgfgantt}
+\pgfplotsset{compat=newest}
+
+\usetikzlibrary{arrows,shapes,positioning}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{shadows,automata}
+\usetikzlibrary{patterns}
+%\usetikzlibrary{circuits.ee.IEC}
+\usetikzlibrary{decorations.text}
+% For Sagnac Picture
+\usetikzlibrary{%
+    decorations.pathreplacing,%
+    decorations.pathmorphing%
+}
+
+%
+%Redefining sections as problems
+%
+\makeatletter
+\newenvironment{question}{\@startsection
+	{section}
+	{1}
+	{-.2em}
+	{-3.5ex plus -1ex minus -.2ex}
+    	{1.3ex plus .2ex}
+    	{\pagebreak[3]%forces pagebreak when space is small; use \eject for better results
+	\large\bf\noindent{Question }
+	}
+	}
+	%{\vspace{1ex}\begin{center} \rule{0.3\linewidth}{.3pt}\end{center}}
+	%\begin{center}\large\bf \ldots\ldots\ldots\end{center}}
+\makeatother
+
+%
+%Fancy-header package to modify header/page numbering
+%
+%\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+\renewcommand{\sectionmark}[1]{ \markright{#1}{} }
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\addtolength{\headwidth}{\marginparsep} %these change header-rule width
+%\addtolength{\headwidth}{\marginparwidth}
+%\fancyheadoffset{30pt}
+%\fancyfootoffset{30pt}
+\fancyhead[LO,RE]{\small  \it \nouppercase{\leftmark}}
+\fancyhead[RO,LE]{\small Page \thepage}
+\fancyfoot[RO,LE]{\small }% PR \num S-2015}
+\fancyfoot[LO,RE]{\small }%\scshape MODL}
+\cfoot{}
+\renewcommand{\headrulewidth}{0.1pt}
+\renewcommand{\footrulewidth}{0pt}
+%\setlength\voffset{-0.25in}
+%\setlength\textheight{648pt}
+
+
+\usepackage{paralist}
+
+
+%%% FORMAT PYTHON CODE
+\usepackage{listings}
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{8} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{8}  % for normal
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+%\usepackage{listings}
+
+% % Python style for highlighting
+% \newcommand\pythonstyle{\lstset{
+% language=Python,
+% basicstyle=\footnotesize\ttm,
+% otherkeywords={self},             % Add keywords here
+% keywordstyle=\footnotesize\ttb\color{deepblue},
+% emph={MyClass,__init__},          % Custom highlighting
+% emphstyle=\footnotesize\ttb\color{deepred},    % Custom highlighting style
+% stringstyle=\color{deepgreen},
+% frame=tb,                         % Any extra options here
+% showstringspaces=false            %
+% }}
+
+% % Python environment
+% \lstnewenvironment{python}[1][]
+% {
+% \pythonstyle
+% \lstset{#1}
+% }
+% {}
+
+% % Python for external files
+% \newcommand\pythonexternal[2][]{{
+% \pythonstyle
+% \lstinputlisting[#1]{#2}}}
+
+% % Python for inline
+% \newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+
+
+\newcommand{\osn}{\oldstylenums}
+\newcommand{\dg}{^{\circ}}
+\newcommand{\lt}{\left}
+\newcommand{\rt}{\right}
+\newcommand{\pt}{\phantom}
+\newcommand{\tf}{\therefore}
+\newcommand{\?}{\stackrel{?}{=}}
+\newcommand{\fr}{\frac}
+\newcommand{\dfr}{\dfrac}
+%\newcommand{\ul}{\underline}
+\newcommand{\tn}{\tabularnewline}
+\newcommand{\nl}{\newline}
+\newcommand\relph[1]{\mathrel{\phantom{#1}}}
+\newcommand{\cm}{\checkmark}
+\newcommand{\ol}{\overline}
+\newcommand{\rd}{\color{red}}
+\newcommand{\bl}{\color{blue}}
+\newcommand{\pl}{\color{purple}}
+\newcommand{\og}{\color{orange!90!black}}
+\newcommand{\gr}{\color{green!40!black}}
+\newcommand{\nin}{\noindent}
+\newcommand{\la}{\lambda}
+\renewcommand{\th}{\theta}
+\newcommand{\al}{\alpha}
+\newcommand{\G}{\Gamma}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,thick,inner sep=1pt] (char) {\small #1};}}
+
+\newcommand{\bc}{\begin{compactenum}[\quad--]}
+\newcommand{\ec}{\end{compactenum}}
+
+\newcommand{\p}{\partial}
+\newcommand{\pd}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\newcommand{\dpd}[2]{\dfrac{\partial{#1}}{\partial{#2}}}
+\newcommand{\pdd}[2]{\frac{\partial^2{#1}}{\partial{#2}^2}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\vspace{-3ex}
+\title{Quantifying and Modeling Global Water Accessibility including Water Typology}
+\author{Hichul Chung \and Emily Kumpel \and Jimi Oke}
+\date{1-8-21}
+\maketitle
+
+%\thispagestyle{empty}
+
+%\tableofcontents
+
+\section{Introduction}
+%%(Roughly 3 paragraphs)
+In 2017, 29\% of the global population (2.2 billion people) did not use a safely managed drinking - water service which is defined as water located on-premise, available, and free from contamination \citep{WHOdrinkingwater}.   If you meet about 100 people, you can imagine that 29 of the people you meet do not have access to improved drinking water. Another recognition is that many people spend a lot of time collecting water where their access to drinking water
+supplies located on-premises are not common, about 26.3 percent of the world's population
+\citep{cassivi2018access}. Where this raises concerns about inequality problems related to the task and time variation 
+to collect water can be inferred in the urban and rural areas \citep{cassivi2018access}. Therefore, there needs to be a
+great motivation to bring improved drinking water sources to all people to improve their quality of life.
+
+%%\item Cite statistics from the WHO/UN on the water situation...
+%%\item What has been the rate of improvement over the years?
+
+Globally, access to improved drinking water sources and sanitation is increasing. From 1990 to 2012, utilization of
+improved drinking water sources has increased globally from 76 percent to 89 percent, and utilization of improved
+sanitation has increased from 45 percent to 64 percent \citep{fuller2016tracking}. According to the MDG categorization,
+they consider improved drinking water sources as following: public tap, borehole, protected spring, rainwater
+collection, bottled water source, and piped water \citep{bartram2014globala}. However, these variables do not truly
+explain if the households have speedy access to retrieve the water. Therefore, we will investigate further on what
+variables should be included to enhance the accessibility of improved drinking water.
+
+% {\reversemarginpar\marginnote{\scriptsize\rd The introduction should end with a paragraph summarizing the contents and layout of the remainder of the manuscript. E.g. ``In the next section we discuss relevant prior research on water accessibility quantification. Next, we present the data and methods...''}} 
+
+In the next section we discuss relevant prior research on water accessibility quantification. We are interested in what type of modes of
+transportation are utilized to provide clean and drinking water to the community. Also, we desire to learn more about
+the time it takes to transport water to the community in a global modeling context. So that we can develop and quantify
+water accessibility in different countries to compare different trends. Also, we will be exploring the most efficient
+and effective modes of transportation of accessible water. Therefore, the new models will be able to influence and
+encourage policymakers in specific countries to improve water accessibility for all. Next we present the data and methods of approaching the quantification of the water accessibility. 
+ 
+\section{Relevant work}
+Organized by chronology and the Categorical. 
+
+\paragraph{}
+\citet{onda2012global}discusses the global access to safe water by accounting for water quality and the resulting impact on MDG progress. In 2012, \citet{onda2012global} altered the current Joint monitoring programme (JMP) estimation by including for microbial water quality and sanitary risk utilizing national water quality data. \citep{onda2012global} used principal components analysis to analyze the national environment and development indicators and then created models. Overall, our analysis can highlight the potential fatigue illness caused by people transporting the water if it is done manually. How the modes of transportation can affect one's health.
+\paragraph{}
+\citet{sima2013water} highlights the relation of the topic where it discovered that over 76 percent of the city's water is utilized by less than ten percent of household piped water.  The study is focused in Kisumu Kenya and Sima interviewed 260 informal water business operators. This article revealed a new insight where the majority of the population in Kisumu relied on purchased water from kiosks (1.5 million $m^{3}$ per day) and used hand-drawn water-carts (0.75 million $m^{3}$ per day)\citep{sima2013water}. Also, we discovered that the water trucking industry utilized the most energy consumption and was high cost: water delivery trucks have the highest per cubic meter energy demand (35 $MJ/m^{3}$)\citep{sima2013water}. The article utilized SPSS Version 19.0 to analyze the data. 
+\paragraph{}
+\citet{ho2014challenge} highlights a head-to-head comparison of such indicators with other possible distance and time metrics among rural 1,103 households in Nampula province, Mozambique. The researchers found out that Euclidean line distance to be a good representative for route distance ($R^{2} = 0.98$), while self-reported travel time is a poor representative ($R^{2} = 0.12$). One of key insights was that, 15-minute decrease in one-way walk time to water source is related to a 41\% reduction in diarrhea, improved children's nutrition, and an 11\% reduction in under-five child mortality rate \citep{ho2014challenge}. This research can be a helpful tool to understand how long people are traveling in a rural area in Africa where many of our data focus. Also, understanding how people are traveling to receive the water can better understand the condition of the rural people and implement better policies that help them to thrive. 
+\paragraph{}
+\citet{bartram2014globala} highlights a background information about the Millennium Development Goals. How it has established global targets for drinking water and sanitation access (Bartram et al. 2014). The article indirectly gives much information about progress towards focused targets, directed by international monitoring, has reduced the global disease burden and improved the quality of life \citep{bartram2014globala}. It utilizes a variety of sources such as JMP, DHS, MICS surveys to analyze the data of many different locations in the world, therefore, it is a broad scope of study of the progress of accessible and drinking water and sanitation globally. Our research can study further what modes of transportation of clean drinking water would affect the progress of improving drinking water and sanitation in one's community. Also, understanding how long it takes to attain the water can improve the quality of the services provided for the people. 
+\paragraph{}
+\citet{onda2014country} discusses their new development of typology of country clusters pertain to water and sanitation sector based on congruence through multiple related indicators. \citet{onda2014country} used a hierarchical clustering method and a gap statistic analysis to cluster 156 countries which has 6.75 billion people into a relational clusters. \citet{onda2014country} suggests previous geography or income-based country clustering should be improved by using water and sanitation related indicators. Our research can improvise upon their finding and focus on identifying which water accessibility variables may improve water accessibility for people who are seeking clean drinking water. 
+\paragraph{}
+\citet{WHOdrinkingwater} article gives an ambitious plan to reach universal drinking water by the year of 2030 that is affordable and safe followed by the Sustainable Development Goal six goals. The WHO/UNICEF Joint Monitoring Program for Water Supply and Sanitation (JMP) are monitoring progress on drinking water and sanitation since 1990 globally. The article outlines different plans with consistent traits to determine what is deemed to be safe and affordable drinking water and good sanitation. Our study can highlight which modes of transportation of safe and affordable drinking water can develop why one's community may excel in the improvement of safe and affordable drinking water and sanitation. Drinking, sanitation, and hand washing ladder explains the qualitative determination can indirectly help what is a good source of transporting safe and drinking water. 
+\paragraph{}
+\citet{fuller2016tracking} highlights the global accessibility to safe drinking water and sanitation and concludes that it has been improving well during the Millennium Development Goal Period. This topic will benefit our research to understand what countries are doing for the mode of transportation of drinking water and sanitation which may have contributed to the improvements. \citet{fuller2016tracking} chose some countries and studied the overall countries progress which in his methodology revealed sigmoidal trends. Our study can reveal if certain methods of transportation of drinking water and sanitation may have influenced the effectiveness of the improved drinking water met by MDG standards.  
+\paragraph{}
+\citet{jia2016highresolution} highlights that there is inequality within safe sanitation. There is a great difference in wealth levels in many low-income countries. Therefore, this will hinder the improvement of MDG progress. \citet{jia2016highresolution}discusses future interventions to be engaged with different wealth categories. Our study can assist in understanding improved sanitation increase by making inferences about how they receive water may give the community focusing on sanitation. Overall, income inequality affects who will have access to proper sanitation.
+\paragraph{}
+\citet{cassivi2018access} highlights about how there should be more information to the effect of including a 30-minute collection time to monitor access to drinking water. The lack of access to on-premises water sources can cause the use of greater distant alternative sources. Therefore causing the quantity of retrieved water to reduce as the water plateau phenomenon.\citet{cassivi2018access} hypothesizes that the households who must travel further are using unimproved sources. For our research, we can discover what modes of transportation people are traveling to retrieve the water and in what quantity depending on their means of transportation. Therefore, learning how to decrease the travel time of people to retrieve the water because according to the article, it can be a great burden and does not increase the quality of one's life to retrieve water daily and far away from their homes. 
+\paragraph{}
+\citet{tortajada2018achieving} highlights that sharing the immense improvement at the 2015 convention negatively affected many people because they actually have not acquired clean drinking water. While 2.6 billion people gained access to drinking water, they did not have constructive feedback on the quality of the water. Also, our research can fill in the blank on how did these people actually retrieve the water? Our research can measure the performance of how people retrieve water which may not be in their premises.  
+\paragraph{}
+\citet{amit2019measuring} highlights their data analysis similar to what we will be doing and found out that for non-piped households, collection costs are 22\% of the coping costs, while collection costs for piped households are less than 2\% of the coping costs. The researchers also realize that there is economic inequality because the majority of the piped households are in households that are considered wealthy households and vice versa. Our research can pinpoint how households are traveling to collect water to improve potential policy-making for water accessibility. 
+\paragraph{}
+\citet{price2019difference} highlights the temporal dynamics of drinking water access and quality in urban slums which is home to about 1 billion people globally. \citet{price2019difference} discusses the temporal changes in drinking water access and quality in urban slums may influence on health risks. \citet{price2019difference} believes that monitoring temporal dynamics should be considered over three interlinked time scales:
+\begin{center}
+\begin{tabular}{ c c c }
+ short-term & medium term & long-term \\ 
+  & &  \\  
+  & &     
+\end{tabular}
+\end{center}
+\citet{price2019difference} recommends future research to explore the short-term water access and quality monitoring. Also we should learn to recognize the role of socio-cultural factors that may impact the temporal dynamics of safe water access. Our project can pinpoint additional water accessibility variables that can be used to focus to recognize the time variations as well.  
+\paragraph{}
+\citet{rawas2020comparing} highlights the need for different approaches of intermittent water supplies (IWS) to monitor piped water supply perpetually in Peru. This relates and informs one mode of transportation of clean and accessible water. Our research can make inferences about if the customers receive clean water elsewhere, such as water tankers, kiosks, vendors, etc. Overall, the article found that the percent of households with IWS was a few percentage points greater than of the reported utilities. 
+\paragraph{}
+\citet{deshpande2020mapping} discusses their findings of improved overall water availability and piped water accessibility for the globe (40\% to 50.3\%). \citet{deshpande2020mapping} also found that it was the lowest increase in sub-Saharan Africa, where the accessibility was mostly concentrated in urban regions. \citet{deshpande2020mapping} focuses mostly on understanding trends in diarrhea burden, where the needs are greatest for the improvement of access to safe drinking water and sanitation facilities. Our study can benefit this research by implementing the best and effective modes of transportation of clean water to improve safe drinking water and sanitation. Even with the water pipe access increasing, they can't conclude if the people had clean water as they needed right away. Overall, the access to safe drinking water and sanitation improved globally between 2000 and 2017, but dis-proportionality undermines reaching the SDG goals. 
+\paragraph{}
+\citet{goal} explains specific targets that have goals and indicators to track global water accessibility. The article quantifies and provides Graphs: safe drinking water, safe sanitation, and hygiene, safe sanitation and hygiene, ambient water quality, water use efficiency, levels of freshwater stress, integrated water management, trans-boundary water cooperation, protect and restore water-related ecosystems, water and sanitation support, local participation in sanitation management. They have many ambitious plans to achieve by 2020 and 2030, and our research can find a correlation to why achieving this may be possible.
+% citep (for citations fully enclosed in parentheses)
+% cite (for citations without any parentheses)
+% citet (for citations where the year only is in parentheses)
+%%\textit{Discuss the who/what/when/where? (You already have this... just need to reorganize or improve structure)}
+%Another example is \citet{fuller2016tracking}.
+%\citet{rawas2020comparing} highlights the need for different approaches of intermittent water supplies (IWS) to monitor piped water supply perpetually in Peru.
+%\citet{cassivi2018access} discuss time access...
+%\hl{Perhaps insert a table summarizing the various dimensions of water accessibility that have been studied}
+%Other examples: \citep{amit2019measuring,ho2014challenge}
+\subsection{Gaps and areas for improvement}
+We are interested in analyzing the impact of transportation modes (usage/ownership) on water accessibility.
+
+\eject
+
+\printbibliography
+
+\section*{Data}
+\hl{In this section, describe the data sources and the variables, along with data preparation procedures, variable
+  selection criteria, etc. You should have a table summarizing the water accessibility variables and their
+  definitions. Another table can summarize the explanatory variables (e.g. transportation-related, income-related,
+  etc). Also discuss the number of countries, etc. I've started a table as an example. You can add other columns if needed.}
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{c c m{7cm}}\toprule
+    \bf Variable & \bf Description & \bf Definition \\\midrule
+    \texttt{ptap} & Households using a public tap/standpipe
+ & Percentage of households whose main source of drinking water is a public tap/standpipe \\\hline
+ \texttt{bore} & Households using a tube well/borehole & Percentage of households whose main source of drinking water is a tubewell/borehole
+\\\hline
+\texttt{pspr} & Households using a protected spring
+& Percentage of households whose main source of drinking water is a protected spring
+\\\hline
+\texttt{uspr} & Households using an unprotected spring
+& Percentage of households whose main source of drinking water is an unprotected spring \\\hline
+\texttt{pwel} & Households using a protected well
+& Percentage of households whose main source of drinking water is a protected well \\\hline
+\texttt{uwel} & Households using an unprotected well water
+&Percentage of households whose main source of drinking water is an unprotected well
+\\\hline
+\texttt{surw} & Households using surface water
+& Percentage of households whose main source of drinking water is surface water
+\\\hline
+\texttt{tles} & Households with water 30 minutes or less away round trip
+&Percentage of households with water 30 minutes or less away round trip
+\\\hline 
+\texttt{tmor } & Households with water more than 30 minutes away round trip
+& Percentage of households with water more than 30 minutes away round trip
+\\\hline
+\texttt{rain } &Households using rainwater
+& Percentage of households whose main source of drinking water is rainwater
+\\\hline
+\texttt{phom}&Households using water piped into dwelling
+&Percentage of households whose main source of drinking water is water piped into the dwelling
+\\\hline
+
+& \\\bottomrule
+  \end{tabular}
+  \caption{Summary of water accessibility variables (national averages at household level)}
+  \label{tab:summary}
+\end{table}
+
+\hl{1. We could also add the relevant data extracted from DHS showing what countries were also collected.
+2. Show numbers because numbers tells great story.}
+\paragraph{•}
+\hl{ 3. Describe the 11 water accessibility variables, where it came from \citep{price2019difference} 
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{c c m{7cm}}\toprule
+    \bf Variable & \bf Description & \bf Definition \\\midrule
+    \texttt{imws} & Households using an improved water source
+ & Percentage of households whose main source of drinking water is an improved source
+ \\\hline
+ 
+ & \\\bottomrule
+  \end{tabular}
+  \caption{Summary of explanatory variables (national averages at household level)}
+  \label{tab:summary}
+\end{table}
+ 
+
+\section*{Methods}
+%\hl{Ultimately, there will be a preamble to summarize the contents of this section}
+\paragraph{Preamble}
+We analyzed data from the Demographic Health Survey (DHS) and the Multiple Indicator Cluster Survey (MICS) (1990-2020) to highlight water accessibility predictors in 78 countries throughout the world.
+
+\subsection*{Cluster analysis}
+\hl{You have all you need to write this section. 
+You want to describe the algorithms for clustering, the indices for measuring cluster quality, and process you follow to choose the best method/cluster number.}
+
+
+
+\hl{ 1. Description of the algorithms implemented: single, average, complete, ward.D, and ward.D2 }
+
+\hl{ 2. Explanation of using NBClust function in R for ward.D2, ward.D, Complete, and K-means; these four methods were elected due their organization of the initial clustering trees.}
+
+\hl{ 3. List of the optimal number of cluster values and the indices number of values for different alogrithm methods for the clustering methods. Description of how to determine the potential best clustering methodology. }
+
+\hl { 4. Clustering optimization data share and explain: Ward.D2 chosen with 4 clustering tree methodology. Share the finished clustering graph for visualization.} 
+
+
+\subsection*{Classification model to explain water accessibility predictors}
+\hl{This is the second phase of the work, which you should hopefully start in January}
+
+
+\section*{Results and Discussion}
+\subsection*{Summary of variables}
+\hl{Here, you show and discuss the data distributions (e.g. histograms, correlation plots, etc)}
+
+\subsection*{Water accessibility typologies}
+\hl{Show the typology/cluster results and discuss.}
+
+\subsection*{Model results}
+
+  % \section*{Discussion}
+
+\section*{Conclusion}
+
+\printbibliography
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
