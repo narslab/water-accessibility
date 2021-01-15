@@ -356,7 +356,7 @@ temporal dynamics should be considered over three interlinked time scales:
 \end{center}
 \citet{price2019difference} recommends future research to explore the short-term water access and quality monitoring. Also we should learn to recognize the role of socio-cultural factors that may impact the temporal dynamics of safe water access. Our project can pinpoint additional water accessibility variables that can be used to focus to recognize the time variations as well.  
 \paragraph{}
-\citet{rawas2020comparing} highlights the need for different approaches of intermittent water supplies (IWS) to monitor piped water supply perpetually in Peru. This relates and informs one mode of transportation of clean and accessible water. Our research can make inferences about if the customers receive clean water elsewhere, such as water tankers, kiosks, vendors, etc. Overall, the article found that the percent of households with IWS was a few percentage points greater than of the reported utilities. 
+\citet{rawas2020comparing} highlights the need for different approaches of intermittent water supplies (IWS) to monitor piped water supply perpetually in Peru. This relates and informs one mode of transportation of clean and accessible water. Our research can make inferences about if the customers receive clean water elsewhere, such as water tankers, kiosks, vendors, etc. Overall, the article found that the percent of households with (IWS) was a few percentage points greater than of the reported utilities. 
 \paragraph{}
 \citet{deshpande2020mapping} discusses their findings of improved overall water availability and piped water accessibility for the globe (40\% to 50.3\%). \citet{deshpande2020mapping} also found that it was the lowest increase in sub-Saharan Africa, where the accessibility was mostly concentrated in urban regions. \citet{deshpande2020mapping} focuses mostly on understanding trends in diarrhea burden, where the needs are greatest for the improvement of access to safe drinking water and sanitation facilities. Our study can benefit this research by implementing the best and effective modes of transportation of clean water to improve safe drinking water and sanitation. Even with the water pipe access increasing, they can't conclude if the people had clean water as they needed right away. Overall, the access to safe drinking water and sanitation improved globally between 2000 and 2017, but dis-proportionality undermines reaching the SDG goals. 
 \paragraph{}
@@ -388,33 +388,35 @@ We are interested in analyzing the impact of transportation modes (usage/ownersh
   \begin{tabular}{c c m{7cm}}\toprule
     \bf Variable & \bf Description & \bf Definition \\\midrule
     \texttt{ptap} & Households using a public tap/standpipe
- & Percentage of households whose main source of drinking water is a public tap/standpipe \\\hline
- \texttt{bore} & Households using a tube well/borehole & Percentage of households whose main source of drinking water is a tubewell/borehole
+ & Percentage of households whose main source of drinking water is a public tap/standpipe.
+ \\\hline
+ \texttt{bore} & Households using a tube well/borehole & Percentage of households whose main source of drinking water is a tube-well/borehole.
 \\\hline
 \texttt{pspr} & Households using a protected spring
-& Percentage of households whose main source of drinking water is a protected spring
+& Percentage of households whose main source of drinking water is a protected spring.
 \\\hline
 \texttt{uspr} & Households using an unprotected spring
-& Percentage of households whose main source of drinking water is an unprotected spring \\\hline
+& Percentage of households whose main source of drinking water is an unprotected spring.
+\\\hline
 \texttt{pwel} & Households using a protected well
-& Percentage of households whose main source of drinking water is a protected well \\\hline
+& Percentage of households whose main source of drinking water is a protected well.
+\\\hline
 \texttt{uwel} & Households using an unprotected well water
-&Percentage of households whose main source of drinking water is an unprotected well
+&Percentage of households whose main source of drinking water is an unprotected well.
 \\\hline
 \texttt{surw} & Households using surface water
-& Percentage of households whose main source of drinking water is surface water
+& Percentage of households whose main source of drinking water is surface water.
 \\\hline
 \texttt{tles} & Households with water 30 minutes or less away round trip
-&Percentage of households with water 30 minutes or less away round trip
+&Percentage of households with water 30 minutes or less away round trip.
 \\\hline 
-\texttt{tmor } & Households with water more than 30 minutes away round trip
-& Percentage of households with water more than 30 minutes away round trip
+\texttt{tmor} & Households with water more than 30 minutes away round trip & Percentage of households with water more than 30 minutes away round trip.
 \\\hline
-\texttt{rain } &Households using rainwater
-& Percentage of households whose main source of drinking water is rainwater
+\texttt{rain} & Households using rainwater
+& Percentage of households whose main source of drinking water is rainwater.
 \\\hline
-\texttt{phom}&Households using water piped into dwelling
-&Percentage of households whose main source of drinking water is water piped into the dwelling
+\texttt{phom} & Households using water piped into dwelling
+&Percentage of households whose main source of drinking water is water piped into the dwelling.
 \\\hline
 
 & \\\bottomrule
@@ -429,9 +431,50 @@ We are interested in analyzing the impact of transportation modes (usage/ownersh
   \begin{tabular}{c c m{7cm}}\toprule
     \bf Variable & \bf Description & \bf Definition \\\midrule
     \texttt{imws} & Households using an improved water source
- & Percentage of households whose main source of drinking water is an improved source
+ & Percentage of households whose main source of drinking water is an improved source.
  \\\hline
- 
+  \texttt{pipy} & Households using water piped into yard/plot
+& Percentage of households whose main source of drinking water is water piped into the yard or plot.
+\\\hline
+ \texttt{truc} & Households using tanker truck & Percentage of households whose main source of drinking water is tanker truck.
+\\\hline
+ \texttt{ctan} & Households using cart with tank & Percentage of households whose main source of drinking water is cart with tank.
+\\\hline
+ \texttt{bott} & Households using bottled water & Percentage of households whose main source of drinking water is bottled water/demi john.
+\\\hline
+ \texttt{uiws} & Households using an unimproved water source & Percentage of households whose main source of drinking water is an unimproved source.
+\\\hline
+ \texttt{othw} & Households using other water source & Percentage of households whose main source of drinking water is other.
+\\\hline
+ \texttt{iwsp} & Households with improved water source on the premises & Percentage of the de jure population living in households with an improved water source on the premises.
+\\\hline
+ \texttt{basw} & Households with basic water service
+ & Percentage of households with basic water service, defined as an improved water source with either water on the premises or round-trip collection time is 30 minutes or less.
+\\\hline
+ \texttt{liws} & Households with limited water service
+ & Percentage of households with limited water service, defined as an improved water source with round-trip collection time greater than 30 minutes.
+\\\hline
+ \texttt{prem} & Households with water on the premises
+ & Percentage of households with water on the premises.
+\\\hline
+ \texttt{bicy} & Households possessing a bicycle
+ & Percentage of households possessing a bicycle.
+\\\hline
+ \texttt{acar} & Households possessing an animal drawn cart
+ & Percentage of households possessing an animal drawn cart.
+\\\hline
+ \texttt{mcyc} & Households possessing a motorcycle
+ & Percentage of households possessing a motorcycle.
+\\\hline
+ \texttt{pcar} & Households possessing a private car
+ & Percentage of households possessing a private car.
+\\\hline
+ \texttt{boat} & Households possessing a boat with a motor
+ & Percentage of households possessing a boat with a motor.
+\\\hline
+ \texttt{wigc} & Wealth index Gini coefficient
+ & The Gini coefficient indicates the level of concentration of wealth in the country.
+\\\hline
  & \\\bottomrule
   \end{tabular}
   \caption{Summary of explanatory variables (national averages at household level)}
