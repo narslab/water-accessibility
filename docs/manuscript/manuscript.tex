@@ -506,6 +506,10 @@ We elected 11 variables that describe water accessibility of 78 countries around
 
 First, we used a different clustering algorithm to determine the best clustering results. We tested and categorized differently by using single, average, complete, ward.d, and ward.d2 methods to develop clustering dendrogram. Then, we analyzed by determining the best hierarchical relationship of each of the methods by observing the tree diagram itself; if it has more of even distribution of each tree are the optimal clustering methods. We determined that ward.d2 had the best visual and even distribution, but to check this further, we used a function in R called 'NBClust' to determine the best algorithm as well as the best cut or groupings for the clustering methods. 
 
+We compared Ward.D2, Ward.D, complete, and k-means algorithm methods to determine the best cuts, and also to confirm that Ward.D2 was the best clustering algorithm method to develop the deprogram tree. The 'NBClust' function was set to determine the best clustering methodology by choosing minimum clustering from 3 to max cuts of 7 and utilized all the indices.  The majority rule was implemented by the 'NBClust' function for Ward.d2, Ward.D, and the complete algorithm determined that the best clustering cut was four. However, k-means determined to be 3, but we determined that Ward.D2 is the best methodology thus far. 
+
+Next, we compared the best indicies values for different algorthim solving methodlogy to determine the best cuts to comfirm that Ward.D2 is the best methodlogy. 
+
 
 
 
