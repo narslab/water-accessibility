@@ -508,16 +508,34 @@ First, we used a different clustering algorithm to determine the best clustering
 
 We compared Ward.D2, Ward.D, complete, and k-means algorithm methods to determine the best cuts, and also to confirm that Ward.D2 was the best clustering algorithm method to develop the deprogram tree. The 'NBClust' function was set to determine the best clustering methodology by choosing minimum clustering from 3 to max cuts of 7 and utilized all the indices.  The majority rule was implemented by the 'NBClust' function for Ward.d2, Ward.D, and the complete algorithm determined that the best clustering cut was four. However, k-means determined to be 3, but we determined that Ward.D2 is the best methodology thus far. 
 
-Next, we compared the best indices values for different algorithm solving methodology to determine the best cuts to confirm that Ward.D2 is the best methodology. Once again, we determined that Ward.D2 was the best algorithm and learned that best cut is four trees by doing analysis within the different indices values of different algorithm theories. We compared the values by choosing KL, Ratkowsky, and Marriot values to compare what is the best cut for different clustering methods. 
+Next, we compared the best indices values for different algorithm solving methodology to determine the best cuts to confirm that Ward.D2 is the best methodology. Once again, we determined that Ward.D2 was the best algorithm and learned that the best cut is four trees by analyzing within the different indices values of different algorithm theories. We compared the values by choosing KL, Ratkowsky, and Marriot values to compare what is the best cut for different clustering methods. 
 
 \begin{table}[h!]
   \centering
-  \begin{tabular}{c c m{7cm}}\toprule
-    \bf Variable & \bf Description & \bf Definition \\\midrule
-    \texttt{imws} 
- & \\\bottomrule
+  \begin{tabular}{c c c}\toprule
+    \bf Methods & \bf KL (clusters) & \bf Value Index \\\midrule
+    \texttt{Ward.D2} & 4 & 2.4982 \\\hline
+    \texttt{Ward.D} & 4 & 3.3397 \\\hline
+    \texttt{Complete} & 4 & 3.9093 \\\hline
+     \texttt{K-Means} & 12 & 8.6836  \\\bottomrule
   \end{tabular}
-  \caption{Summary of explanatory variables (national averages at household level)}
+   \centering
+  \begin{tabular}{c c c}\toprule
+    \bf Methods & \bf Ratkowsky (clusters) & \bf Value Index \\\midrule
+    \texttt{Ward.D2} & 4 & 0.2981 \\\hline
+    \texttt{Ward.D} & 4 & 0.2981 \\\hline
+    \texttt{Complete} & 3 & 0.3193 \\\hline
+     \texttt{K-Means} & 3 & 0.2948 \\\bottomrule
+  \end{tabular}
+   \centering
+  \begin{tabular}{c c c c c}\toprule
+    \bf Methods & \bf Marriot(clusters) & \bf Value Index & \bf Gap & \bf Majority Rule  \\\midrule
+    \texttt{Ward.D2} & 4 & 1.54E+40 &  8 & 4 \\\hline
+    \texttt{Ward.D} & 4 & 1.79E+40 & 8 & 4 \\\hline
+    \texttt{Complete} & 4 & 1.77E+40  & 7 & 4 \\\hline
+     \texttt{K-Means} & 4 & 1.54E+40  & \texttt{N/A} & 3  \\\bottomrule
+  \end{tabular}
+  \caption{Summary of optimal clustering index values (Different Clustering Methods)}
   \label{tab:summary}
 \end{table}
 
