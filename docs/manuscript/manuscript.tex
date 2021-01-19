@@ -350,8 +350,7 @@ temporal dynamics should be considered over three interlinked time scales:
 \begin{center}
 \begin{tabular}{ c c c }
  short-term & medium term & long-term \\ 
-  & &  \\  
-  & &     
+   
 \end{tabular}
 \end{center}
 
@@ -503,9 +502,9 @@ We analyzed data from the Demographic Health Survey (DHS) and the Multiple Indic
 % 4. Election of the best clustering
 % 5. Analysis of Ward.d2 & 4 cut tree analysis
 
-We elected 11 variables which describes water accessibility of 78 countries around the world \citep{price2019difference}. Next, we decided to implement clustering which is an unsupervised machine learning method to identify and group water accessibility variables in large data set to understand and make inference about particular water accessibility variables. All of the clustering analysis was assisted by using R program. Clustering ultimately can continue to assist on discovering the water accessibility predictor variables. 
+We elected 11 variables that describe water accessibility of 78 countries around the world \citep{price2019difference}. Next, we decided to implement clustering which is an unsupervised machine learning method to identify and group water accessibility variables in large data set to understand and make inferences about particular water accessibility variables. All of the clustering analysis was assisted by using the R program. Clustering ultimately can continue to assist in discovering the water accessibility predictor variables. 
 
-First, we used different clustering algorithm to determine best clustering results. We tested and categorized differently by using single, average, complete, ward.d, and ward.d2 methods to develop clustering dedrogram. Then, we analyzed by determine the best hierarchical relationship of each of the method by observing the tree diagram itself; if it has more of even distribution of each trees are the optimal clustering methods. 
+First, we used a different clustering algorithm to determine the best clustering results. We tested and categorized differently by using single, average, complete, ward.d, and ward.d2 methods to develop clustering dendrogram. Then, we analyzed by determining the best hierarchical relationship of each of the methods by observing the tree diagram itself; if it has more of even distribution of each tree are the optimal clustering methods. We determined that ward.d2 had the best visual and even distribution, but to check this further, we used a function in R called 'NBClust' to determine the best algorithm as well as the best cut or groupings for the clustering methods. 
 
 
 
