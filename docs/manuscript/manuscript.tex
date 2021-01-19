@@ -496,15 +496,9 @@ in the following table to allow for quick visualization for table 1. The other v
 We analyzed data from the Demographic Health Survey (DHS) and the Multiple Indicator Cluster Survey (MICS) (1990-2020) to highlight water accessibility predictors in 78 countries throughout the world.
 
 \subsection*{Cluster analysis}
-% 1. Clustering focusing on 11 water accessibility variables
-% 2. Different clustering algorithm for initial analysis
-% 3. Determination and analysis of best cut and hierarchical clustering method
-% 4. Election of the best clustering
-% 5. Analysis of Ward.d2 & 4 cut tree analysis
-
 We elected 11 variables that describe water accessibility of 78 countries around the world \citep{price2019difference}. Next, we decided to implement clustering which is an unsupervised machine learning method to identify and group water accessibility variables in large data set to understand and make inferences about particular water accessibility variables. All of the clustering analysis was assisted by using the R program. Clustering ultimately can continue to assist in discovering the water accessibility predictor variables. 
 
-First, we used a different clustering algorithm to determine the best clustering results. We tested and categorized differently by using single, average, complete, ward.d, and ward.d2 methods to develop clustering dendrogram. Then, we analyzed by determining the best hierarchical relationship of each of the methods by observing the tree diagram itself; if it has more of even distribution of each tree are the optimal clustering methods. We determined that ward.d2 had the best visual and even distribution, but to check this further, we used a function in R called 'NBClust' to determine the best algorithm as well as the best cut or groupings for the clustering methods. 
+First, we used a different clustering algorithm to determine the best clustering results. We tested and categorized differently by using single, average, complete, ward.D, and ward.D2 methods to develop clustering dendrogram. Then, we analyzed by determining the best hierarchical relationship of each of the methods by observing the tree diagram itself; if it has more of even distribution of each tree are the optimal clustering methods. We determined that ward.d2 had the best visual and even distribution, but to check this further, we used a function in R called 'NBClust' to determine the best algorithm as well as the best cut or groupings for the clustering methods. 
 
 We compared Ward.D2, Ward.D, complete, and k-means algorithm methods to determine the best cuts, and also to confirm that Ward.D2 was the best clustering algorithm method to develop the deprogram tree. The 'NBClust' function was set to determine the best clustering methodology by choosing minimum clustering from 3 to max cuts of 7 and utilized all the indices.  The majority rule was implemented by the 'NBClust' function for Ward.d2, Ward.D, and the complete algorithm determined that the best clustering cut was four. However, k-means determined to be 3, but we determined that Ward.D2 is the best methodology thus far. 
 
@@ -539,7 +533,9 @@ Next, we compared the best indices values for different algorithm solving method
   \label{tab:summary}
 \end{table}
 
+Table 3 is a rough summary of why Ward.D2 is the best clustering methodology if we go by four cuts. For the KL cluster algorithm, we determined that the best Value index is 2.4982 which is the lowest for the index, and the KL algorithm determines that the lowest value index results from the best cut of four. Also, the Ratkowsky cluster theorem determined that Ward.D2 was the best method for four cuts because the value index was the lowest matching Ward.D at .2981. However, Ward.D is the incomplete version of Ward.D2 where they forgot to square one of the intermediate value in the theorem. Therefore, Ward.D2 is the best clustering method for Ward.D2. Similarly, for the Marriot clustering theorem, Ward.D2 is the best once again due to the Ward.D having the greatest value index which determines that it is the best clustering method. Similar to an explanation from Ratkowsky, Ward.D2 is chosen to be the best method for 4 cuts.
 
+Lastly, we developed a horizontal dendrogram using R focusing on Ward.D2 methodology for clustering. We also cut the dendrogram in 4 trees as an 'NBClust' analysis. The clustering trees can be further be analyzed and the results and analysis will be discussed in the results and discussion section. 
 
 
 
