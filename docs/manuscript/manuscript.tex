@@ -533,7 +533,7 @@ Next, we compared the best indices values for different algorithm solving method
   \label{tab:summary}
 \end{table}
 
-Table 3 is a rough summary of why Ward.D2 is the best clustering methodology if we go by four cuts. For the KL cluster algorithm, we determined that the best Value index is 2.4982 which is the lowest for the index, and the KL algorithm determines that the lowest value index results from the best cut of four. Also, the Ratkowsky cluster theorem determined that Ward.D2 was the best method for four cuts because the value index was the lowest matching Ward.D at .2981. However, Ward.D is the incomplete version of Ward.D2 where they forgot to square one of the intermediate value in the theorem. Therefore, Ward.D2 is the best clustering method for Ward.D2. Similarly, for the Marriot clustering theorem, Ward.D2 is the best once again due to the Ward.D having the greatest value index which determines that it is the best clustering method. Similar to an explanation from Ratkowsky, Ward.D2 is chosen to be the best method for 4 cuts.
+Table 3 is a rough summary of why Ward.D2 is the best clustering methodology if we go by four cuts. For the KL cluster algorithm, we determined that the best Value index is 2.4982 which is the lowest for the index, and the KL algorithm determines that the lowest value index results from the best cut of four. Also, the Ratkowsky cluster theorem determined that Ward.D2 was the best method for four cuts because the value index was the lowest matching Ward.D at .2981. However, Ward.D is the incomplete version of Ward.D2 where they forgot to square one of the intermediate value in the theorem. Therefore, Ward.D2 is the best clustering method for Ward.D2. Similarly, for the Marriot clustering theorem, Ward.D2 is the best once again due to the Ward.D having the greatest value index which determines that it is the best clustering method. Similar to an explanation from Ratkowsky, Ward.D2 is chosen to be the best method for 4 cuts. Figure 7 shows the visual representation of the explanation by the table 3. 
 
 Lastly, we developed a horizontal dendrogram using R focusing on Ward.D2 methodology for clustering. We also cut the dendrogram in 4 trees as an 'NBClust' analysis. The clustering trees can be further be analyzed and the results and analysis will be discussed in the results and discussion section. 
 
@@ -609,13 +609,16 @@ There is a problem of people not available to retrieve water quickly and there i
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=.7\textwidth]{spider-plot}
-  \caption{Spider Plot of Water Accessibility Variables by Typology}
+  \includegraphics[width=.7\textwidth]{Dendrogram}
+  \caption{Cluster Dendrogram with Four Cuts}
   \label{fig:spider}
 \end{figure}
-
-
-
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.7\textwidth]{optimal-cuts}
+  \caption{Optimal Number of Clusters for Ward.D2}
+  \label{fig:spider}
+\end{figure}
 \begin{figure}[h!]
   \centering
   \includegraphics[width=.7\textwidth]{spider-plot}
