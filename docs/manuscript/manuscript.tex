@@ -562,7 +562,7 @@ First, we developed a correlation chart to quickly analyze if there is any great
   \centering
   \includegraphics[width=.7\textwidth]{correlation-basic}
   \caption{Correlation Graph of Numerical Variables}
-  \label{fig:year}
+  \label{fig:cor-basic}
 \end{figure}
 As we continued to study further upon the correlations of the variables, we used more advanced correlation graphs to determined their p-value, and to see a relationship between different categorical variables is shown in Figure 3, which again indicates a greater detailed comparison between the variables. Households with an improved water source on the premises (iwsp) have a strong relationship with households with basic water service (basw) of .84 and a p-value of less than 0.001. Also, we learned and discovered that Households using an unimproved water source (uiws) have a positive relationship with Households using unprotected well water (uwel), Households using an unprotected spring (uspr), and Households using surface water (surw) with a p-value of less than 0.001 as well. These relationships justify the necessity to research further if the particular water accessibility variables can increase the accessibility of particular water sources to reach universal access to water by 2030, as proposed in the SDGs. 
 
@@ -572,7 +572,7 @@ As we continued to study further upon the correlations of the variables, we used
   \centering
   \includegraphics[width=.7\textwidth]{adv-cor-plot}
   \caption{Advanced Correlation Graph of Numerical Variables}
-  \label{fig:year}
+  \label{fig:cor-plot}
 \end{figure}
 Additionally, we wanted to explore if the modes of transportation variables have any relationship with potential water variables. Therefore, we investigated by developing more correlation plots relating transportation variables with water accessibility variables which are shown in Figure 4,5,6. There is a significant positive relationship between households possessing a private car (pcar) and households with water on the premises (watp) as shown in Figure 4. There is also is a significant negative relationship between households possessing a private car (pcar) with households with water 30 minutes or less away round trip (tles) and households with water more than 30 minutes away round trip (tmor) with a p-value of less than 0.001. This information is essential to investigate further why this is the global trend. 
 
@@ -581,21 +581,21 @@ Additionally, we wanted to explore if the modes of transportation variables have
   \centering
   \includegraphics[width=.7\textwidth]{transportation-time}
   \caption{Advanced Correlation Graph of Modes of Transportation and Time}
-  \label{fig:year}
+  \label{fig:transporation-time}
 \end{figure}
 Figure 5 shows that Households possessing a motorcycle (mcyc) has a positive correlation with Households using a tube well/borehole (bore) and Households using rainwater (rain) with a p-value of less than 0.01. Similar to the previous analysis, there is a relationship between a mode of transportation to retrieve potential water sources. Figure 6 also shows that households possessing an animal-drawn cart (acar) have a positive and strong relationship with households using unprotected well water (uwel) with a p-value of less than 0.001. The results demonstrate that different modes of transportation factor into the accessibility of retrieving water sources on a global scale, therefore, there should be consideration of these variables to increase access to improved water sources. 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=.7\textwidth]{transportation-water-1}
   \caption{Advanced Correlation Graph of Modes of Transportation and Water Resources}
-  \label{fig:year}
+  \label{fig:transporation-water}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=.7\textwidth]{transportation-water-2}
   \caption{Advanced Correlation Graph of Modes of Transportation and Additional Water Resources}
-  \label{fig:year}
+  \label{fig:transporation-water}
 \end{figure}
 
 There is a problem of people not available to retrieve water quickly and there is a collection burden which is necessary to increase the water quality to improve many people's health and quality of life \citep{cassivi2018access}. These initial findings can allow us to research into what are the major factors of water accessibility for the 76 countries by developing clustering and determining the water accessibility variable predictors. A future study could use the water accessibility variable predictors to implement policies and experiment if it improved water accessibility for the community. This would be a necessary implementation to invest to improve their access to water to reach universal access by 2030.
@@ -609,15 +609,15 @@ There is a problem of people not available to retrieve water quickly and there i
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=.7\textwidth]{Dendrogram}
+  \includegraphics[width=.7\textwidth]{dendrogram}
   \caption{Cluster Dendrogram with Four Cuts}
-  \label{fig:spider}
+  \label{fig:dendrogram}
 \end{figure}
 \begin{figure}[h!]
   \centering
   \includegraphics[width=.7\textwidth]{optimal-cuts}
   \caption{Optimal Number of Clusters for Ward.D2}
-  \label{fig:spider}
+  \label{fig:optimal}
 \end{figure}
 \begin{figure}[h!]
   \centering
