@@ -430,7 +430,7 @@ in the following table to allow for quick visualization for table 1. The other v
 & \\\bottomrule
   \end{tabular}
   \caption{Summary of water accessibility variables (national averages at household level)}
-  \label{tab:summary}
+  \label{tab:summary-wa}
 \end{table}
 
 
@@ -486,7 +486,7 @@ in the following table to allow for quick visualization for table 1. The other v
  & \\\bottomrule
   \end{tabular}
   \caption{Summary of explanatory variables (national averages measured as percentage at household level)}
-  \label{tab:summary}
+  \label{tab:summary-var}
 \end{table}
  \subsection*{Summary of variables}
 \hl{Here, you show and discuss the data distributions (e.g. histograms, correlation plots, etc)}
@@ -541,7 +541,7 @@ Next, we compared the best indices values for different algorithm solving method
      \texttt{K-Means} & 4 & 1.54E+40  & \texttt{N/A} & 3  \\\bottomrule
   \end{tabular}
   \caption{Summary of optimal clustering index values (Different Clustering Methods)}
-  \label{tab:summary}
+  \label{tab:summary-optimal}
 \end{table}
 
 Table 3 is a rough summary of why Ward.D2 is the best clustering methodology if we go by four cuts. For the KL cluster algorithm, we determined that the best Value index is 2.4982 which is the lowest for the index, and the KL algorithm determines that the lowest value index results from the best cut of four. Also, the Ratkowsky cluster theorem determined that Ward.D2 was the best method for four cuts because the value index was the lowest matching Ward.D at .2981. However, Ward.D is the incomplete version of Ward.D2 where they forgot to square one of the intermediate value in the theorem. Therefore, Ward.D2 is the best clustering method for Ward.D2. Similarly, for the Marriot clustering theorem, Ward.D2 is the best once again due to the Ward.D having the greatest value index which determines that it is the best clustering method. Similar to an explanation from Ratkowsky, Ward.D2 is chosen to be the best method for 4 cuts. Figure 7 shows the visual representation of the explanation by the table 3. 
@@ -589,14 +589,14 @@ Figure 5 shows that Households possessing a motorcycle (mcyc) has a positive cor
   \centering
   \includegraphics[width=.7\textwidth]{transportation-water-1}
   \caption{Advanced Correlation Graph of Modes of Transportation and Water Resources}
-  \label{fig:transporation-water}
+  \label{fig:transporation-water-one}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=.7\textwidth]{transportation-water-2}
   \caption{Advanced Correlation Graph of Modes of Transportation and Additional Water Resources}
-  \label{fig:transporation-water}
+  \label{fig:transporation-water-two}
 \end{figure}
 
 There is a problem of people not available to retrieve water quickly and there is a collection burden which is necessary to increase the water quality to improve many people's health and quality of life \citep{cassivi2018access}. These initial findings can allow us to research into what are the major factors of water accessibility for the 76 countries by developing clustering and determining the water accessibility variable predictors. A future study could use the water accessibility variable predictors to implement policies and experiment if it improved water accessibility for the community. This would be a necessary implementation to invest to improve their access to water to reach universal access by 2030.
@@ -605,9 +605,16 @@ There is a problem of people not available to retrieve water quickly and there i
 
 \subsection*{Water accessibility typologies}
 \hl{Show the typology/cluster results and discuss.}
-NBClust statistic analysis developed and determined four distinct groups. First cluster group composed of countries near the equator or in the Sub-Sahara Regions. The second analysis of the second group represents countries considered developed or recently industrialized.
+NBClust statistic analysis developed and determined four distinct groups. First cluster group composed of countries near the equator or in the Sub-Sahara Regions. The analysis of the second group represents countries considered developed or recently industrialized. Third cluster group represents most of the countries in the central Africa and may have similar factors as the first cluster group. The fourth cluster group represents most of countries in the middle east or predominately non-African countries. There is a great internally heterogeneous clusters for the 76 distinct countries. The cluster analysis' dendrogram is shown in \autoref{fig:dendrogram}, and the corresponding NBClust curve yielding the optimal four clusters is shown in \autoref{fig:optimal-clusters, fig:optimal-cuts}.
 
-%Results A gap statistic analysis resulted first in two distinct groups,with the first being composed of countries typically considered developed or newly industrialized.  The second analysis of the second group resulted in four country clusters. The greater subdivision would have resulted in statistically similar clusters, while greater aggregation would have resulted in highly internally heterogeneous clusters. The dendrogram resulting from this cluster analysis is shown in Fig. 1, and the corresponding gap curve yielding four clusters is shown in Fig. 2. Table 3 shows the resulting five water and sanitation country clusters. Fig. 3 shows the cluster country membership on a world map. The cluster indicator variable means are summarized in Table 4. The Dunn and Davies-BouldinIndices for our clusters, as well as the World Bank, WHO, and MDGgroupings are shown in Table 5. Our clusters have both the largest Dunn index and smallest Davies-Bouldin index, indicating that they represent a superior grouping along with the chosen relevant indicators.
+%   Table 3 shows the resulting five water and sanitation country clusters. Fig. 3 shows the cluster country membership on a world map. The cluster indicator variable means are summarized in Table 4. The Dunn and Davies-BouldinIndices for our clusters, as well as the World Bank, WHO, and MDGgroupings are shown in Table 5. Our clusters have both the largest Dunn index and smallest Davies-Bouldin index, indicating that they represent a superior grouping along with the chosen relevant indicators.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.7\textwidth]{optimal-clusters-ward-d2}
+  \caption{Optimal Number of Clusters for Ward.D2}
+  \label{fig:optimal-clusters}
+\end{figure}
 
 \begin{figure}[h!]
   \centering
