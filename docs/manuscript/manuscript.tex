@@ -390,7 +390,7 @@ Data structure this study were collected from the Demographic Health Survey (DHS
 We prepossess the data by differentiating the different surveys collected by the DHS program between DHS and Malaria Indicators Survey (MIS) through excel. After, we used R to develop and simplify the table with the most recent surveys for the most up to date analysis for the 78 countries. There was two sets of data of population and households. Therefore, we decided to remove the population data from the table to simplify because population and households data were identical. 
 
 Next, there were many missing values from the data. Therefore, we had to do a simple missing value analysis. We determined to avoid using water, transportation, or wealth variables which had greater than 50\% missing values. Ultimately, simplified data frame was 76 countries by 28 variables. After, two different tables are generated where one focused on the water accessibility variables and a explanatory variables. We selected 11 water accessibility variables based on the sources available such as location, time, and methodology \citep{price2019difference}. The water accessibility variable was organized
-in the following table to allow for quick visualization for table 1. The other variables were used as an explanatory variables for determining the water accessibility predictors in Table 2. 
+in the following table to allow for quick visualization for \autoref{tab:summary-wa}. The other variables were used as an explanatory variables for determining the water accessibility predictors in \autoref{tab:summary-var}. 
 \begin{table}[h!]
   \centering
   \begin{tabular}{p{1in} p{3in} p{2in}}\toprule
@@ -436,53 +436,53 @@ in the following table to allow for quick visualization for table 1. The other v
 
 \begin{table}[h!]
   \centering
-  \begin{tabular}{c c m{5cm}}\toprule
+  \begin{tabular}{p{1in} p{3in} p{2in}}\toprule
     \bf Variable & \bf Description & \bf Definition \\\midrule
     \texttt{imws} & Households using an improved water source
  & Percentage of households whose main source of drinking water is an improved source.
- \\\hline
+ \\\midrule
   \texttt{pipy} & Households using water piped into yard/plot
 & Percentage of households whose main source of drinking water is water piped into the yard or plot.
-\\\hline
+\\\midrule
  \texttt{truc} & Households using tanker truck & Percentage of households whose main source of drinking water is tanker truck.
-\\\hline
+\\\midrule
  \texttt{ctan} & Households using cart with tank & Percentage of households whose main source of drinking water is cart with tank.
-\\\hline
+\\\midrule
  \texttt{bott} & Households using bottled water & Percentage of households whose main source of drinking water is bottled water/demi john.
-\\\hline
+\\\midrule
  \texttt{uiws} & Households using an unimproved water source & Percentage of households whose main source of drinking water is an unimproved source.
-\\\hline
+\\\midrule
  \texttt{othw} & Households using other water source & Percentage of households whose main source of drinking water is other.
-\\\hline
+\\\midrule
  \texttt{iwsp} & Households with improved water source on the premises & Percentage of the de jure population living in households with an improved water source on the premises.
-\\\hline
+\\\midrule
  \texttt{basw} & Households with basic water service
  & Percentage of households with basic water service, defined as an improved water source with either water on the premises or round-trip collection time is 30 minutes or less.
-\\\hline
+\\\midrule
  \texttt{liws} & Households with limited water service
  & Percentage of households with limited water service, defined as an improved water source with round-trip collection time greater than 30 minutes.
-\\\hline
+\\\midrule
  \texttt{prem} & Households with water on the premises
  & Percentage of households with water on the premises.
-\\\hline
+\\\midrule
  \texttt{bicy} & Households possessing a bicycle
  & Percentage of households possessing a bicycle.
-\\\hline
+\\\midrule
  \texttt{acar} & Households possessing an animal drawn cart
  & Percentage of households possessing an animal drawn cart.
-\\\hline
+\\\midrule
  \texttt{mcyc} & Households possessing a motorcycle
  & Percentage of households possessing a motorcycle.
-\\\hline
+\\\midrule
  \texttt{pcar} & Households possessing a private car
  & Percentage of households possessing a private car.
-\\\hline
+\\\midrule
  \texttt{boat} & Households possessing a boat with a motor
  & Percentage of households possessing a boat with a motor.
-\\\hline
+\\\midrule
  \texttt{wigc} & Wealth index Gini coefficient
  & The Gini coefficient indicates the level of concentration of wealth in the country.
-\\\hline
+\\\midrule
  & \\\bottomrule
   \end{tabular}
   \caption{Summary of explanatory variables (national averages measured as percentage at household level)}
@@ -509,44 +509,44 @@ We analyzed data from the Demographic Health Survey (DHS) and the Malaria Indica
 \subsection*{Cluster analysis}
 We elected 11 variables that describe water accessibility of 78 countries around the world \citep{price2019difference}. Next, we decided to implement clustering which is an unsupervised machine learning method to identify and group water accessibility variables in large data set to understand and make inferences about particular water accessibility variables. All of the clustering analysis was assisted by using the R program. Clustering ultimately can continue to assist in discovering the water accessibility predictor variables. 
 
-First, we used a different clustering algorithm to determine the best clustering results. We tested and categorized differently by using single, average, complete, ward.D, and ward.D2 methods to develop clustering dendrogram. Then, we analyzed by determining the best hierarchical relationship of each of the methods by observing the tree diagram itself; if it has more of even distribution of each tree are the optimal clustering methods. We determined that ward.d2 had the best visual and even distribution, but to check this further, we used a function in R called 'NBClust' to determine the best algorithm as well as the best cut or groupings for the clustering methods. 
+First, we used a different clustering algorithm to determine the best clustering results. We tested and categorized differently by using single, average, complete, ward.D, and ward.D2 methods to develop clustering dendrogram. Then, we analyzed by determining the best hierarchical relationship of each of the methods by observing the tree diagram itself; if it has more of even distribution of each tree are the optimal clustering methods. We determined that ward.d2 had the best visual and even distribution, but to check this further, we used a function in R called 'NBClust' to determine the best algorithm as well as the best cut or groupings for the clustering methods as shown in \autoref{fig:optimal-clusters}. 
 
 We compared Ward.D2, Ward.D, complete, and k-means algorithm methods to determine the best cuts, and also to confirm that Ward.D2 was the best clustering algorithm method to develop the deprogram tree. The 'NBClust' function was set to determine the best clustering methodology by choosing minimum clustering from 3 to max cuts of 7 and utilized all the indices.  The majority rule was implemented by the 'NBClust' function for Ward.d2, Ward.D, and the complete algorithm determined that the best clustering cut was four. However, k-means determined to be 3, but we determined that Ward.D2 is the best methodology thus far. 
 
-Next, we compared the best indices values for different algorithm solving methodology to determine the best cuts to confirm that Ward.D2 is the best methodology. Once again, we determined that Ward.D2 was the best algorithm and learned that the best cut is four trees by analyzing within the different indices values of different algorithm theories. We compared the values by choosing KL, Ratkowsky, and Marriot values to compare what is the best cut for different clustering methods. 
+Next, we compared the best indices values for different algorithm solving methodology to determine the best cuts to confirm that Ward.D2 is the best methodology. Once again, we determined that Ward.D2 was the best algorithm and learned that the best cut is four trees by analyzing within the different indices values of different algorithm theories. We compared the values by choosing KL, Ratkowsky, and Marriot values to compare what is the best cut for different clustering methods as shown in \autoref{fig:optimal}. 
 
 \begin{table}[h!]
   \centering
-  \begin{tabular}{c c c}\toprule
+  \begin{tabular}{p{1in} p{1in} p{1in}}\toprule
     \bf Methods & \bf KL (clusters) & \bf Value Index \\\midrule
-    \texttt{Ward.D2} & 4 & 2.4982 \\\hline
-    \texttt{Ward.D} & 4 & 3.3397 \\\hline
-    \texttt{Complete} & 4 & 3.9093 \\\hline
+    \texttt{Ward.D2} & 4 & 2.4982 \\\midrule
+    \texttt{Ward.D} & 4 & 3.3397 \\\midrule
+    \texttt{Complete} & 4 & 3.9093 \\\midrule
      \texttt{K-Means} & 12 & 8.6836  \\\bottomrule
   \end{tabular}
    \centering
-  \begin{tabular}{c c c}\toprule
+  \begin{tabular}{p{1in} p{1in} p{1in}}\toprule
     \bf Methods & \bf Ratkowsky (clusters) & \bf Value Index \\\midrule
-    \texttt{Ward.D2} & 4 & 0.2981 \\\hline
-    \texttt{Ward.D} & 4 & 0.2981 \\\hline
-    \texttt{Complete} & 3 & 0.3193 \\\hline
+    \texttt{Ward.D2} & 4 & 0.2981 \\\midrule
+    \texttt{Ward.D} & 4 & 0.2981 \\\midrule
+    \texttt{Complete} & 3 & 0.3193 \\\midrule
      \texttt{K-Means} & 3 & 0.2948 \\\bottomrule
   \end{tabular}
    \centering
-  \begin{tabular}{c c c c c}\toprule
+  \begin{tabular}{p{1in} p{1in} p{1in} p{1in} p{1in}}\toprule
     \bf Methods & \bf Marriot(clusters) & \bf Value Index & \bf Gap & \bf Majority Rule  \\\midrule
-    \texttt{Ward.D2} & 4 & 1.54E+40 &  8 & 4 \\\hline
-    \texttt{Ward.D} & 4 & 1.79E+40 & 8 & 4 \\\hline
-    \texttt{Complete} & 4 & 1.77E+40  & 7 & 4 \\\hline
+    \texttt{Ward.D2} & 4 & 1.54E+40 &  8 & 4 \\\midrule
+    \texttt{Ward.D} & 4 & 1.79E+40 & 8 & 4 \\\midrule
+    \texttt{Complete} & 4 & 1.77E+40  & 7 & 4 \\\midrule
      \texttt{K-Means} & 4 & 1.54E+40  & \texttt{N/A} & 3  \\\bottomrule
   \end{tabular}
   \caption{Summary of optimal clustering index values (Different Clustering Methods)}
   \label{tab:summary-optimal}
 \end{table}
 
-Table 3 is a rough summary of why Ward.D2 is the best clustering methodology if we go by four cuts. For the KL cluster algorithm, we determined that the best Value index is 2.4982 which is the lowest for the index, and the KL algorithm determines that the lowest value index results from the best cut of four. Also, the Ratkowsky cluster theorem determined that Ward.D2 was the best method for four cuts because the value index was the lowest matching Ward.D at .2981. However, Ward.D is the incomplete version of Ward.D2 where they forgot to square one of the intermediate value in the theorem. Therefore, Ward.D2 is the best clustering method for Ward.D2. Similarly, for the Marriot clustering theorem, Ward.D2 is the best once again due to the Ward.D having the greatest value index which determines that it is the best clustering method. Similar to an explanation from Ratkowsky, Ward.D2 is chosen to be the best method for 4 cuts. Figure 7 shows the visual representation of the explanation by the table 3. 
+\autoref{tab:summary-optimal} is a rough summary of why Ward.D2 is the best clustering methodology if we go by four cuts. For the KL cluster algorithm, we determined that the best Value index is 2.4982 which is the lowest for the index, and the KL algorithm determines that the lowest value index results from the best cut of four. Also, the Ratkowsky cluster theorem determined that Ward.D2 was the best method for four cuts because the value index was the lowest matching Ward.D at .2981. However, Ward.D is the incomplete version of Ward.D2 where they forgot to square one of the intermediate value in the theorem. Therefore, Ward.D2 is the best clustering method for Ward.D2. Similarly, for the Marriot clustering theorem, Ward.D2 is the best once again due to the Ward.D having the greatest value index which determines that it is the best clustering method. Similar to an explanation from Ratkowsky, Ward.D2 is chosen to be the best method for 4 cuts. \autoref{fig:optimal} shows the visual representation of the explanation by the \autoref{tab:summary-optimal}. 
 
-Lastly, we developed a horizontal dendrogram using R focusing on Ward.D2 methodology for clustering. We also cut the dendrogram in 4 trees as an 'NBClust' analysis. The clustering trees can be further be analyzed and the results and analysis will be discussed in the results and discussion section. 
+Lastly, we developed a horizontal dendrogram using R focusing on Ward.D2 methodology for clustering. We also cut the dendrogram in 4 trees as an 'NBClust' analysis as shown in \autoref{fig:dendrogram}. The clustering trees can be further be analyzed and the results and analysis will be discussed in the results and discussion section. 
 
 
 
@@ -557,7 +557,7 @@ Lastly, we developed a horizontal dendrogram using R focusing on Ward.D2 methodo
 \section*{Results and Discussion}
 
 \subsection*{Model results}
-First, we developed a correlation chart to quickly analyze if there is any great correlation between all the 28 numerical variables that may pertain to water accessibility. We recognized the strong and weak relationship by the size and color of the correlation plot is shown in Figure 2, which indicates households with limited water service (liws) has the strongest and positive relationship with Households possessing a bicycle (bicy). Meanwhile, households using an improved water source (imws) has the strongest and negative relationship with households using an unimproved water source (uiws). This initial finding results indicated that the initial variables are logical and can give us insight into further understanding and the relationship between these variables. 
+First, we developed a correlation chart to quickly analyze if there is any great correlation between all the 28 numerical variables that may pertain to water accessibility. We recognized the strong and weak relationship by the size and color of the correlation plot is shown in \autoref{fig:cor-basic}, which indicates households with limited water service (liws) has the strongest and positive relationship with Households possessing a bicycle (bicy). Meanwhile, households using an improved water source (imws) has the strongest and negative relationship with households using an unimproved water source (uiws). This initial finding results indicated that the initial variables are logical and can give us insight into further understanding and the relationship between these variables. 
 
 \begin{figure}[h!]
   \centering
@@ -565,7 +565,7 @@ First, we developed a correlation chart to quickly analyze if there is any great
   \caption{Correlation Graph of Numerical Variables}
   \label{fig:cor-basic}
 \end{figure}
-As we continued to study further upon the correlations of the variables, we used more advanced correlation graphs to determined their p-value, and to see a relationship between different categorical variables is shown in Figure 3, which again indicates a greater detailed comparison between the variables. Households with an improved water source on the premises (iwsp) have a strong relationship with households with basic water service (basw) of .84 and a p-value of less than 0.001. Also, we learned and discovered that Households using an unimproved water source (uiws) have a positive relationship with Households using unprotected well water (uwel), Households using an unprotected spring (uspr), and Households using surface water (surw) with a p-value of less than 0.001 as well. These relationships justify the necessity to research further if the particular water accessibility variables can increase the accessibility of particular water sources to reach universal access to water by 2030, as proposed in the SDGs. 
+As we continued to study further upon the correlations of the variables, we used more advanced correlation graphs to determined their p-value, and to see a relationship between different categorical variables is shown in \autoref{fig:cor-plot}, which again indicates a greater detailed comparison between the variables. Households with an improved water source on the premises (iwsp) have a strong relationship with households with basic water service (basw) of .84 and a p-value of less than 0.001. Also, we learned and discovered that Households using an unimproved water source (uiws) have a positive relationship with Households using unprotected well water (uwel), Households using an unprotected spring (uspr), and Households using surface water (surw) with a p-value of less than 0.001 as well. These relationships justify the necessity to research further if the particular water accessibility variables can increase the accessibility of particular water sources to reach universal access to water by 2030, as proposed in the SDGs. 
 
 
 
@@ -575,7 +575,7 @@ As we continued to study further upon the correlations of the variables, we used
   \caption{Advanced Correlation Graph of Numerical Variables}
   \label{fig:cor-plot}
 \end{figure}
-Additionally, we wanted to explore if the modes of transportation variables have any relationship with potential water variables. Therefore, we investigated by developing more correlation plots relating transportation variables with water accessibility variables which are shown in Figure 4,5,6. There is a significant positive relationship between households possessing a private car (pcar) and households with water on the premises (watp) as shown in Figure 4. There is also is a significant negative relationship between households possessing a private car (pcar) with households with water 30 minutes or less away round trip (tles) and households with water more than 30 minutes away round trip (tmor) with a p-value of less than 0.001. This information is essential to investigate further why this is the global trend. 
+Additionally, we wanted to explore if the modes of transportation variables have any relationship with potential water variables. Therefore, we investigated by developing more correlation plots relating transportation variables with water accessibility variables which are shown in \autoref{fig:transporation-time}, \autoref{fig:transporation-water-one}, \autoref{fig:transporation-water-two}. There is a significant positive relationship between households possessing a private car (pcar) and households with water on the premises (watp) as shown in \autoref{fig:transporation-time}. There is also is a significant negative relationship between households possessing a private car (pcar) with households with water 30 minutes or less away round trip (tles) and households with water more than 30 minutes away round trip (tmor) with a p-value of less than 0.001. This information is essential to investigate further why this is the global trend. 
 
 
 \begin{figure}[h!]
@@ -584,7 +584,7 @@ Additionally, we wanted to explore if the modes of transportation variables have
   \caption{Advanced Correlation Graph of Modes of Transportation and Time}
   \label{fig:transporation-time}
 \end{figure}
-Figure 5 shows that Households possessing a motorcycle (mcyc) has a positive correlation with Households using a tube well/borehole (bore) and Households using rainwater (rain) with a p-value of less than 0.01. Similar to the previous analysis, there is a relationship between a mode of transportation to retrieve potential water sources. Figure 6 also shows that households possessing an animal-drawn cart (acar) have a positive and strong relationship with households using unprotected well water (uwel) with a p-value of less than 0.001. The results demonstrate that different modes of transportation factor into the accessibility of retrieving water sources on a global scale, therefore, there should be consideration of these variables to increase access to improved water sources. 
+\autoref{fig:transporation-water-one} shows that Households possessing a motorcycle (mcyc) has a positive correlation with Households using a tube well/borehole (bore) and Households using rainwater (rain) with a p-value of less than 0.01. Similar to the previous analysis, there is a relationship between a mode of transportation to retrieve potential water sources. \autoref{fig:transporation-water-two} also shows that households possessing an animal-drawn cart (acar) have a positive and strong relationship with households using unprotected well water (uwel) with a p-value of less than 0.001. The results demonstrate that different modes of transportation factor into the accessibility of retrieving water sources on a global scale, therefore, there should be consideration of these variables to increase access to improved water sources. 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=.7\textwidth]{transportation-water-1}
