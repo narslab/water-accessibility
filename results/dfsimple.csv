@@ -1,0 +1,79 @@
+Country,Year,Survey,clusters.typology
+Afghanistan,2015,DHS,1
+Albania,2018,DHS,2
+Angola,2016,DHS,3
+Armenia,2016,DHS,2
+Azerbaijan,2006,DHS,4
+Bangladesh,2014,DHS,1
+Benin,2018,DHS,1
+Bolivia,2008,DHS,4
+Brazil,1996,DHS,2
+Burkina Faso,2018,MIS,1
+Burundi,2017,DHS,3
+Cambodia,2014,DHS,4
+Cameroon,2018,DHS,1
+Central African Republic,1995,DHS,3
+Chad,2015,DHS,1
+Colombia,2015,DHS,2
+Comoros,2012,DHS,4
+Congo,2012,DHS,3
+Congo Democratic Republic,2014,DHS,3
+Cote d'Ivoire,2012,DHS,1
+Dominican Republic,2013,DHS,4
+Egypt,2014,DHS,2
+Eritrea,2002,DHS,3
+Eswatini,2007,DHS,3
+Ethiopia,2016,DHS,3
+Gabon,2012,DHS,4
+Gambia,2013,DHS,3
+Ghana,2019,MIS,1
+Guatemala,2015,DHS,4
+Guinea,2018,DHS,1
+Guyana,2009,DHS,4
+Haiti,2017,DHS,3
+Honduras,2012,DHS,2
+India,2016,DHS,1
+Indonesia,2017,DHS,4
+Jordan,2018,DHS,2
+Kazakhstan,1999,DHS,2
+Kenya,2015,MIS,3
+Kyrgyz Republic,2012,DHS,4
+Lesotho,2014,DHS,3
+Liberia,2016,MIS,1
+Madagascar,2016,MIS,3
+Malawi,2017,MIS,1
+Maldives,2017,DHS,4
+Mali,2018,DHS,1
+Mauritania,2001,DHS,3
+Moldova,2005,DHS,4
+Morocco,2004,DHS,2
+Mozambique,2018,MIS,3
+Myanmar,2016,DHS,1
+Namibia,2013,DHS,4
+Nepal,2016,DHS,1
+Nicaragua,2001,DHS,4
+Niger,2012,DHS,1
+Nigeria,2018,DHS,1
+Pakistan,2018,DHS,1
+Papua New Guinea,2018,DHS,3
+Paraguay,1990,DHS,4
+Peru,2012,DHS,2
+Philippines,2017,DHS,4
+Rwanda,2017,MIS,3
+Sao Tome and Principe,2009,DHS,3
+Senegal,2018,DHS,4
+Sierra Leone,2016,MIS,3
+South Africa,2016,DHS,2
+Tajikistan,2017,DHS,4
+Tanzania,2017,MIS,3
+Timor-Leste,2016,DHS,4
+Togo,2017,MIS,1
+Turkey,2013,DHS,2
+Turkmenistan,2000,DHS,4
+Uganda,2019,MIS,1
+Ukraine,2007,DHS,2
+Uzbekistan,1996,DHS,2
+Vietnam,2005,AIS,4
+Yemen,2013,DHS,4
+Zambia,2018,DHS,1
+Zimbabwe,2015,DHS,1
