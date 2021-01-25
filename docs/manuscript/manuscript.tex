@@ -293,7 +293,7 @@ one's community.
 
 \citet{WHOdrinkingwater} article gives an ambitious plan to reach universal drinking water by the year of 2030 that is
 affordable and safe followed by the Sustainable Development Goal six goals. The WHO/UNICEF Joint Monitoring Program for
-Water Supply and Sanitation (JMP) have been globallhy monitoring progress on drinking water and sanitation since 1990. The
+Water Supply and Sanitation (JMP) have been globally monitoring progress on drinking water and sanitation since 1990. The
 article outlines different plans with consistent traits to determine what is deemed to be safe and affordable drinking
 water and good sanitation. Our study can highlight which modes of transportation of safe and affordable drinking water
 can develop why one's community may excel in the improvement of safe and affordable drinking water and
@@ -349,7 +349,7 @@ temporal dynamics should be considered over three interlinked time scales: short
 
 \citet{goal} explains specific targets that have goals and indicators to track global water accessibility. The article quantifies and provides Graphs: safe drinking water, safe sanitation, and hygiene, safe sanitation and hygiene, ambient water quality, water use efficiency, levels of freshwater stress, integrated water management, trans-boundary water cooperation, protect and restore water-related ecosystems, water and sanitation support, local participation in sanitation management. They have many ambitious plans to achieve by 2020 and 2030, and our research can find a correlation to why achieving this may be possible.
 
-\citet{cassivi2021evaluating} focuses a case study in Southern Malawi, where data collected in March and April of 2019 at the conclusion of the rainy season. The sample was consisted of 375 households without access to water on their premises.   The article highlighted using Euclidean Distance measurement is more reliable than the self-reported time. Also queuing time measurement can be hard to be measured because of their ambiguity. Her Research gives greater insight into how do we define water accessibility and how increase of water accessibility can impact people's lives beneficially. 
+\citet{cassivi2021evaluating} focuses a case study in Southern Malawi, where data collected in March and April of 2019 at the conclusion of the rainy season. The sample was consisted of 375 households without access to water on their premises.   The article highlighted using Euclidean Distance measurement is more reliable than the self-reported time. Also queuing time measurement can be hard to be measured because of their ambiguity. Their research gives greater insight into how do we define water accessibility and how increase of water accessibility can impact people's lives beneficially. 
 
 
 % citep (for citations fully enclosed in parentheses)
@@ -361,17 +361,16 @@ temporal dynamics should be considered over three interlinked time scales: short
 %\citet{cassivi2018access} discuss time access...
 %\hl{Perhaps insert a table summarizing the various dimensions of water accessibility that have been studied}
 %Other examples: \citep{amit2019measuring,ho2014challenge}
-\subsection*{Gaps and areas for improvement}
 We are interested in analyzing the impact of transportation modes (usage/ownership) on water accessibility. We also desire to see an implementation of this statistical research piloted in one of the countries to see if the water accessibility variables predictors can improve the water accessibility for its country. 
 
 \eject
 
-\section*{Data}
+\section{Data}
 \hl{In this section, describe the data sources and the variables, along with data preparation procedures, variable
   selection criteria, etc. You should have a table summarizing the water accessibility variables and their
   definitions. Another table can summarize the explanatory variables (e.g. transportation-related, income-related,
   etc). Also discuss the number of countries, etc. I've started a table as an example. You can add other columns if needed.}
-\subsection*{Data Preparation}
+\subsection{Data Preparation}
 Data structure this study were collected from the Demographic Health Survey (DHS) program. We used the STATCompiler from the DHS Program to develop customized table based on focusing on water, transportation, and wealth indicators across 78 countries and from 1990 to 2019.
 
 We prepossess the data by differentiating the different surveys collected by the DHS program between DHS and Malaria Indicators Survey (MIS) through excel. After, we used R to develop and simplify the table with the most recent surveys for the most up to date analysis for the 78 countries. There was two sets of data of population and households. Therefore, we decided to remove the population data from the table to simplify because population and households data were identical. 
@@ -488,12 +487,12 @@ Across 78 countries in this study, the data provides 28 numerical variables and 
 \end{figure}
 
 
-\section*{Methods}
+\section{Methods}
 
-\subsection*{Preamble}
+\subsection{Preamble}
 We analyzed data from the Demographic Health Survey (DHS) and the Malaria Indicator Survey (MIS) (1990-2020) to highlight water accessibility predictors in 78 countries throughout the world.
 
-\subsection*{Cluster analysis}
+\subsection{Cluster analysis}
 We elected 11 variables that describe water accessibility of 78 countries around the world \citep{price2019difference}. Next, we decided to implement clustering which is an unsupervised machine learning method to identify and group water accessibility variables in large data set to understand and make inferences about particular water accessibility variables. All of the clustering analysis was assisted by using the R program. Clustering ultimately can continue to assist in discovering the water accessibility predictor variables. 
 
 First, we used a different clustering algorithm to determine the best clustering results. We tested and categorized differently by using single, average, complete, ward.D, and ward.D2 methods to develop clustering dendrogram. Then, we analyzed by determining the best hierarchical relationship of each of the methods by observing the tree diagram itself; if it has more of even distribution of each tree are the optimal clustering methods. We determined that ward.d2 had the best visual and even distribution, but to check this further, we used a function in R called 'NBClust' to determine the best algorithm as well as the best cut or groupings for the clustering methods as shown in \autoref{fig:optimal-clusters}. 
@@ -537,13 +536,13 @@ Lastly, we developed a horizontal dendrogram using R focusing on Ward.D2 methodo
 
 
 
-\subsection*{Classification model to explain water accessibility predictors}
+\subsection{Classification model to explain water accessibility predictors}
 \hl{This is the second phase of the work, which you should hopefully start in January}
 
 
-\section*{Results and Discussion}
+\section{Results and Discussion}
 
-\subsection*{Model results}
+\subsection{Model results}
 First, we developed a correlation chart to quickly analyze if there is any great correlation between all the 28 numerical variables that may pertain to water accessibility. We recognized the strong and weak relationship by the size and color of the correlation plot is shown in \autoref{fig:cor-basic}, which indicates households with limited water service (liws) has the strongest and positive relationship with Households possessing a bicycle (bicy). Meanwhile, households using an improved water source (imws) has the strongest and negative relationship with households using an unimproved water source (uiws). This initial finding results indicated that the initial variables are logical and can give us insight into further understanding and the relationship between these variables. 
 
 \begin{figure}[h!]
@@ -590,7 +589,7 @@ There is a problem of people not available to retrieve water quickly and there i
 
 
 
-\subsection*{Water accessibility typologies}
+\subsection{Water accessibility typologies}
 \hl{Show the typology/cluster results and discuss.}
 NBClust statistic analysis developed and determined four distinct groups. First cluster group composed of countries near the equator or in the Sub-Sahara Regions. The analysis of the second group represents countries considered developed or recently industrialized. Third cluster group represents most of the countries in the central Africa and may have similar factors as the first cluster group. The fourth cluster group represents most of countries in the middle east or predominately non-African countries. There is a great internally heterogeneous clusters for the 76 distinct countries. The cluster analysis' dendrogram is shown in \autoref{fig:dendrogram}, and the corresponding NBClust curve yielding the optimal four clusters is shown in \autoref{fig:optimal-clusters}, \autoref{fig:optimal}. \autoref{}
 
@@ -635,13 +634,13 @@ NBClust statistic analysis developed and determined four distinct groups. First 
   \label{fig:spider}
 \end{figure}
 
-\subsection*{Model results}
+\subsection{Model results}
 
   % \section*{Discussion}
 
-\section*{Conclusion}
+\section{Conclusion}
 
-\section*{Limitation}
+\section{Limitation}
 %he problem of missing data is relatively common in almost all research and can have a significant effect on the conclusions that can be drawn from the data.
 
 \printbibliography
