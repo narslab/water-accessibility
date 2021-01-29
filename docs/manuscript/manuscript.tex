@@ -255,7 +255,7 @@ water accessibility in different countries to compare different trends. Also, we
 and effective modes of transportation of accessible water. Therefore, the new models will be able to influence and
 encourage policymakers in specific countries to improve water accessibility for all. Next, we present the data and methods of approaching the quantification of the water accessibility. 
  
-\section{Contribution}
+\section{Background}
 Lack of water accessibility is a major crisis for many vulnerable people around the world. We have determined to seek literature reviews from the past 15 years to have the most up to date information because information on water accessibility is a topic that is constantly changing throughout the world due to different international, government, and even local policies. The literature review intends to investigate different journal articles on water accessibility on a global scale. Therefore we can conduct research to fill many major gaps to analyze the water accessibility predictor variables which could increase and enhance water accessibility on a global scale. We will always gain new insight and wisdom on information about water accessibility through the global scale as we investigate and determine literature reviews chronologically. 
 \subsection{2006-2016}
 Improving water accessibility has been a priority by many organizations, realizing it is the basic human right to have clean and accessible drinkable water in the past 15 years. From 2006 to 2016, overall water accessibility has been improving by utilizing the indicators of the past \citep{fuller2016tracking}. However, some researchers raise concerns on lack of clarity with the global water accessibility monitoring \citep{onda2012global, jia2016highresolution}. However, in an era of rapidly changing technologies, international and government policies, the older researches are not adequate. For an example of The eight Millennium Development Goals (MDGs) upgrading into The Sustainable Development Goals (SDGs). In light of the newest (SDGs) providing clean and accessible drinking water for all by 2030, researchers have devoted their studies to understand water accessibility at global and specific country levels. Several research and studies have focused global water accessibility ,and its progress \citep{sorensonSafeAccessSafe2011,bainAccountingWaterQuality2012,pickering2012freshwater,wssccWaterSanitationHygiene2014,  onda2012global, bartram2014global, onda2014country, who2015drinkingwater,fuller2016tracking, weiyuyuGlobalPerspectiveDrinkingwater2016, grahamAnalysisWaterCollection2016,overboOnplotDrinkingWater2016}. While there have been studies focusing on the local community in different parts of the country learning about their water accessibility and sanitation initiation \citep{jagals2006does, geereDomesticWaterCarrying2010, sima2013water, ho2014challenge, sakisakaIntroductionCommunityWater2015, jia2016highresolution}. Where majority raised concerns about the lack of monitoring sustainable water accessibility measurements for many people and some argue for a focus on many people's access to drinking water sources. Nonetheless, there is a lack of robust study on transportation to enhance water accessibility for all people by 2030. 
@@ -284,7 +284,7 @@ in the following table to allow for quick visualization for \autoref{tab:summary
 \begin{table}[h!]
   \centering
   \begin{tabular}{p{1in} p{3in} p{2in}}\toprule
-    \bf Variable & \bf Description & \bf Definition \\\midrule
+    \bf Variable & \bf Description & \bf Notes \\\midrule
     \texttt{ptap} &  Public tap/standpipe
  & 
  \\\midrule
@@ -325,7 +325,7 @@ in the following table to allow for quick visualization for \autoref{tab:summary
 \begin{table}[h!]
   \centering
   \begin{tabular}{p{1in} p{3in} p{2in}}\toprule
-    \bf Variable & \bf Description & \bf Definition \\\midrule
+    \bf Variable & \bf Description & \bf Notes \\\midrule
     \texttt{imws} & Improved water source
  & 
  \\\midrule
@@ -372,7 +372,7 @@ in the following table to allow for quick visualization for \autoref{tab:summary
  & The Gini coefficient indicates the level of concentration of wealth in the country.
   \\\bottomrule
   \end{tabular}
-  \caption{Summary of explanatory variables (National Household usage Averages measured as percentage for Main Drinking Source)}
+  \caption{Summary of explanatory variables (National Household usage Averages measured as percentage for Main Drinking Source) }
   \label{tab:summary-var}
 \end{table}
  \subsection*{Summary of variables}
@@ -390,7 +390,7 @@ Across 78 countries in this study, the data provides 28 numerical variables and 
 
 \section{Methods}
 
-\subsection{Preamble}
+
 We analyzed data from the Demographic Health Survey (DHS) and the Malaria Indicator Survey (MIS) (1990-2020) to highlight water accessibility predictors in 78 countries throughout the world.
 
 \subsection{Cluster analysis}
@@ -443,7 +443,7 @@ Lastly, we developed a horizontal dendrogram using R focusing on Ward.D2 methodo
 
 \section{Results and Discussion}
 
-\subsection{Model results}
+\subsection{Exploratory Data Analysis}
 First, we developed a correlation chart to quickly analyze if there is any great correlation between all the 28 numerical variables that may pertain to water accessibility. We recognized the strong and weak relationship by the size and color of the correlation plot is shown in \autoref{fig:cor-basic}, which indicates households with limited water service has the strongest and positive relationship with Households possessing a bicycle. Meanwhile, households using an improved water source has the strongest and negative relationship with households using an unimproved water source. This initial finding results indicated that the initial variables are logical and can give us insight into further understanding and the relationship between these variables. 
 
 \begin{figure}[h!]
@@ -492,7 +492,6 @@ There is a problem of people not available to retrieve water quickly and there i
 
 \subsection{Water accessibility typologies}
 
-\hl{Show the typology/cluster results and discuss.}
 NBClust statistic analysis developed and determined four distinct groups. The first cluster group is composed of countries near the equator or in the Sub-Sahara Regions. The analysis of the second group represents countries considered developed or recently industrialized. The third cluster group represents most of the countries in central Africa and may have similar factors as the first cluster group. The fourth cluster group represents most of the countries in the middle east or predominately non-African countries. There are great internally heterogeneous clusters for the 76 distinct countries. The cluster analysis' dendrogram is shown in \autoref{fig:dendrogram}, and the corresponding NBClust curve yielding the optimal four clusters is shown in \autoref{fig:optimal-clusters}, \autoref{fig:optimal}. \autoref{tab:water-cluster} shows the resulting four water accessibility country clusters. The cluster's water accessibility variables are summarized in \autoref{tab:summary-wa}. \autoref{fig:cluster-map} shows the cluster country membership of the water accessibility on a world map.  Through the optimal analysis of the clusters, which indicated the superior grouping of four cuts along with the relevant indicators. 
 
   
