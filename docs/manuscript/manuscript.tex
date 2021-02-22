@@ -246,8 +246,8 @@ explain if the households have speedy access to retrieve the water. Additionally
 
 % {\reversemarginpar\marginnote{\scriptsize\rd The introduction should end with a paragraph summarizing the contents and layout of the remainder of the manuscript. E.g. ``In the next section we discuss relevant prior research on water accessibility quantification. Next, we present the data and methods...''}} 
 \section{Objectives}
-In this paper, we investigate further on what
-variables should be included to enhance the accessibility of improved drinking water.
+The objective of this work is to  investigate associations between measures of water accessibility and access to modes of transit on the national scale. 
+
 In the next section, we discuss relevant prior research on water accessibility quantification. We are interested in what type of modes of
 transportation are utilized to provide clean and drinking water to the community. Also, our objective is to investigate
 the time it takes to transport water to the community in a global modeling context. So that we can develop and quantify
@@ -257,9 +257,9 @@ encourage policymakers in specific countries to improve water accessibility for 
  
 \section{Background}
 Lack of water accessibility is a major crisis for many vulnerable people around the world. We have determined to seek literature reviews from the past 15 years to have the most up to date information because information on water accessibility is a topic that is constantly changing throughout the world due to different international, government, and even local policies. The literature review intends to investigate different journal articles on water accessibility on a global scale. Therefore we can conduct research to fill many major gaps to analyze the water accessibility predictor variables which could increase and enhance water accessibility on a global scale. We will always gain new insight and wisdom on information about water accessibility through the global scale as we investigate and determine literature reviews chronologically. 
-\subsection{2006-2016}
+\subsection{2000-2015}
 Improving water accessibility has been a priority by many organizations, realizing it is the basic human right to have clean and accessible drinkable water in the past 15 years. From 2006 to 2016, overall water accessibility has been improving by utilizing the indicators of the past \citep{fuller2016tracking}. However, some researchers raise concerns on lack of clarity with the global water accessibility monitoring \citep{onda2012global, jia2016highresolution}. However, in an era of rapidly changing technologies, international and government policies, the older researches are not adequate. For an example of The eight Millennium Development Goals (MDGs) upgrading into The Sustainable Development Goals (SDGs). In light of the newest (SDGs) providing clean and accessible drinking water for all by 2030, researchers have devoted their studies to understand water accessibility at global and specific country levels. Several research and studies have focused global water accessibility ,and its progress \citep{sorensonSafeAccessSafe2011,bainAccountingWaterQuality2012,pickering2012freshwater,wssccWaterSanitationHygiene2014,  onda2012global, bartram2014global, onda2014country, who2015drinkingwater,fuller2016tracking, weiyuyuGlobalPerspectiveDrinkingwater2016, grahamAnalysisWaterCollection2016,overboOnplotDrinkingWater2016}. While there have been studies focusing on the local community in different parts of the country learning about their water accessibility and sanitation initiation \citep{jagals2006does, geereDomesticWaterCarrying2010, sima2013water, ho2014challenge, sakisakaIntroductionCommunityWater2015, jia2016highresolution}. Where majority raised concerns about the lack of monitoring sustainable water accessibility measurements for many people and some argue for a focus on many people's access to drinking water sources. Nonetheless, there is a lack of robust study on transportation to enhance water accessibility for all people by 2030. 
-\subsection{2017-Present}
+\subsection{2015-2021}
 However, in the most recent years, there is a lack of information that needs to focus on people to receive accessible drinking water. The relation between water accessibility and the total time to retrieve drinking water is a concern and (SDGs) should emphasize this study \citep{cassivi2018access}. In the most recent years, there needs a greater understanding of the water accessibility indicators to enhance drinking water accessibility on a global scale for many vulnerable people. While research on water accessibility on a global scale has diminished due to an increase of water for many people \citep{fuller2016tracking}, but \citet{deshpande2020mapping} raises concerns that poorer community around the world are still not receiving clean and accessible drinking water. Several research and studies focus on a global scale to understand water accessibility and sanitation \citep{cassivi2018access, tortajada2018achieving, price2019difference,deshpande2020mapping}. Some research highlighted the coping cost in small community in India \citep{amit2019measuring} and researched on inequality with water accessibility and sanitation \citet{amit2019measuring,price2019difference, rawas2020comparing}. As many research journal articles focused on different aspects of water accessibility and sanitation in particular countries also brought greater insight and necessary to understand water accessibility variables \citep{rawas2020comparing, cassivi2021evaluating, martinez-santos2017determinants}. \citet{goal} emphasized providing safe and accessible drinking water for all on a global scale, which defines that we need a greater understanding of water accessibility and what water accessibility variables be investigated further. Therefore, we will be conducting robust research to understand water accessibility variables and predictors to improve water accessibility to bring clean and safe drinking water for all by 2030 as (SDGs) visioned. 
 
 The journal articles were missing what modes of transportation may enhance water accessibility. Therefore we will be analyzing the impact of transportation modes (usage/ownership) on water accessibility. We will therefore research by statistical analysis in a global scale and pilot in one of the countries to determine if the water accessibility variables predictors can improve the water accessibility for its country.
@@ -269,15 +269,14 @@ The journal articles were missing what modes of transportation may enhance water
 %\textit{Discuss the who/what/when/where? (You already have this... just need to reorganize or improve structure)}
 \eject
 
-\section{Data}
+\section{Methods}
 %\hl{In this section, describe the data sources and the variables, along with data preparation procedures, variable selection criteria, etc. You should have a table summarizing the water accessibility variables and their definitions. Another table can summarize the explanatory variables (e.g. transportation-related, income-related, etc). Also discuss the number of countries, etc. I've started a table as an example. You can add other columns if needed.}
-\subsection{Data Preparation}
-Data structure this study were collected from the Demographic Health Survey (DHS) program. We used the STATCompiler from the DHS Program to develop customized table based on focusing on water, transportation, and wealth indicators across 78 countries and from 1990 to 2019.
+\subsection{Data Sources}
+Data for this study were collected from the Demographic Health Survey (DHS) program, which is . We used the STATCompiler tool available from the DHS Program to develop customized tables on indicators related to  water, transportation, and wealth from 78 countries between 1990-2019.
 
-We prepossess the data by differentiating the different surveys collected by the DHS program between DHS and Malaria Indicators Survey (MIS) through excel. After, we used R to develop and simplify the table with the most recent surveys for the most up to date analysis for the 78 countries. There was two sets of data of population and households. Therefore, we decided to remove the population data from the table to simplify because population and households data were identical. 
+We preprocessed the data by differentiating the different surveys collected by the DHS program between DHS and Malaria Indicators Survey (MIS) through excel. After, we used R to develop and simplify the table with the most recent surveys for the most up to date analysis for the 78 countries. There were two sets of data of population and households. Therefore, we decided to remove the population data from the table to simplify because population and households data were identical. 
 
-Next, there were many missing values from the data. Therefore, we had to do a simple missing value analysis. We determined to avoid using water, transportation, or wealth variables which had greater than 50\% missing values. Ultimately, simplified data frame was 76 countries by 28 variables. After, two different tables are generated where one focused on the water accessibility variables and a explanatory variables. We selected 11 water accessibility variables based on the sources available such as location, time, and methodology \citep{price2019difference}. The water accessibility variable was organized
-in the following table to allow for quick visualization for \autoref{tab:summary-wa}. The other variables were used as an explanatory variables for determining the water accessibility predictors in \autoref{tab:summary-var}. 
+We only preserved variables where less than 50\% of values were missing. Ultimately, simplified data frame was 76 countries by 28 variables. After, two different tables are generated where one focused on the water accessibility variables and a explanatory variables. From the remaining variables, we selected 11 which related to water accessibility.  These included: types of water source (piped into dwelling, public tap/standpipe, tube well/borehole, protected well, protected spring, rainwater, unprotected well, unprotected spring, surface water), and time to water source (less than 30 minutes, more than 30 minutes) \citep{price2019difference} \autoref{tab:summary-wa}. Remaining variables related to wealth and transportation were used as an explanatory variables in the model \autoref{tab:summary-var}. 
 \begin{table}[h!]
   \centering
   \begin{tabular}{p{1in} p{3in} p{2in}}\toprule
@@ -312,26 +311,16 @@ in the following table to allow for quick visualization for \autoref{tab:summary
 \\\midrule
 \texttt{phom} & Piped into dwelling
 
- \\\bottomrule
-  \end{tabular}
-  \caption{Summary of water accessibility variables (National Household usage Averages measured as percentage for Main Drinking Source)}
-  \label{tab:summary-wa}
-\end{table}
-
-
-\begin{table}[h!]
-  \centering
-  \begin{tabular}{p{1in} p{3in} p{2in}}\toprule
-    \bf Variable & \bf Description & \bf Notes \\\midrule
-    \texttt{imws} & Improved water source
+ \\\midrule
+\texttt{imws} & Improved water source
  & 
  \\\midrule
-  \texttt{pipy} & Water piped into yard/plot
+\texttt{pipy} & Water piped into yard/plot
 &
 \\\midrule
  \texttt{truc} & Tanker truck & 
 \\\midrule
- \texttt{ctan} & Cart with tank & 
+ \texttt{cart} & Cart with tank & 
 \\\midrule
  \texttt{bott} & Bottled water & Drinking water is bottled water/demi john.
 \\\midrule
@@ -347,9 +336,19 @@ in the following table to allow for quick visualization for \autoref{tab:summary
  \texttt{liws} & Limited water service
  & Limited water service, defined as an improved water source with round-trip collection time greater than 30 minutes.
 \\\midrule
- \texttt{prem} & Water on the premises
+ \texttt{watp} & Water on the premises
  & 
-\\\midrule
+ \\\bottomrule
+  \end{tabular}
+  \caption{Summary of water accessibility variables (National Household usage Averages measured as percentage for Main Drinking Source)}
+  \label{tab:summary-wa}
+\end{table}
+
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{p{1in} p{3in} p{2in}}\toprule
+    \bf Variable & \bf Description & \bf Notes \\\midrule
  \texttt{bicy} & Bicycle
  &
 \\\midrule
@@ -362,16 +361,40 @@ in the following table to allow for quick visualization for \autoref{tab:summary
  \texttt{pcar} & Private car
  & 
 \\\midrule
- \texttt{boat} & Boat with a motor
+ \texttt{cgdp} & GDP (current US \$) 
+ & [NY.GDP.MKTP.CD]
+\\\midrule
+ \texttt{tpop} & Total Population
+ &  [SP.POP.TOTL]
+\\\midrule
+ \texttt{upop} & Urban population 
+ & (\% of total population)  [SP.URB.TOTL.IN.ZS]
+\\\midrule
+ \texttt{popd} & Population density 
+ & (people per sq. km of land area)  [EN.POP.DNST]
+\\\midrule
+ \texttt{land} & Land area 
+
+ & (sq. km) [AG.LND.TOTL.K2]
+\\\midrule
+ \texttt{lita} & Boat with a motor
+ & 
+\\\midrule
+ \texttt{lity} & Boat with a motor
+ & 
+\\\midrule
+ \texttt{mori} & Boat with a motor
  & 
 \\\midrule
  \texttt{wigc} & Wealth index Gini coefficient
  & The Gini coefficient indicates the level of concentration of wealth in the country.
+ 
   \\\bottomrule
   \end{tabular}
-  \caption{Summary of explanatory variables (National Household usage Averages measured as percentage for Main Drinking Source) }
+  \caption{Summary of explanatory variables (National Household usage Averages measured as percentage for Main Drinking Source or otherwise) }
   \label{tab:summary-var}
 \end{table}
+
  \subsection*{Summary of variables}
 %\hl{Here, you show and discuss the data distributions (e.g. histograms, correlation plots, etc)}
 
@@ -385,15 +408,10 @@ Across 78 countries in this study, the data provides 28 numerical variables and 
 \end{figure}
 
 
-\section{Methods}
-
-
-We analyzed data from the Demographic Health Survey (DHS) and the Malaria Indicator Survey (MIS) (1990-2020) to highlight water accessibility predictors in 78 countries throughout the world.
-
 \subsection{Cluster analysis}
-We elected 11 variables that describe water accessibility of 78 countries around the world \citep{price2019difference}. Next, we decided to implement clustering which is an unsupervised machine learning method to identify and group water accessibility variables in large data set to understand and make inferences about particular water accessibility variables. All of the clustering analysis was assisted by using the R program. Clustering ultimately can continue to assist in discovering the water accessibility predictor variables. 
+We selected 11 variables that describe water accessibility of 78 countries around the world \citep{price2019difference}. Next, we used clustering, an unsupervised machine learning method to identify and group water accessibility variables in a large data set to understand and make inferences using R. Clustering ultimately can continue to assist in discovering the water accessibility predictor variables. 
 
-First, we used a different clustering algorithm to determine the best clustering results. We tested and categorized differently by using single, average, complete, ward.D, and ward.D2 methods to develop clustering dendrogram. Then, we analyzed by determining the best hierarchical relationship of each of the methods by observing the tree diagram itself; if it has more of even distribution of each tree are the optimal clustering methods. We determined that ward.d2 had the best visual and even distribution, but to check this further, we used a function in R called 'NBClust' to determine the best algorithm as well as the best cut or groupings for the clustering methods as shown in \autoref{fig:optimal-clusters}. 
+First, we used different clustering algorithms to determine the best clustering results. We tested and categorized differently by using single, average, complete, ward.D, and ward.D2 methods to develop clustering dendrogram. Then, we analyzed by determining the best hierarchical relationship of each of the methods by observing the tree diagram itself; more even distributions of each tree are interpreted as optimal clustering methods. We determined that ward.d2 had most even distribution, verified through the use of 'NBClust' to determine the best algorithm as well as the best cut or groupings for the clustering methods as shown in \autoref{fig:optimal-clusters}. 
 
 We compared Ward.D2, Ward.D, complete, and k-means algorithm methods to determine the best cuts, and also to confirm that Ward.D2 was the best clustering algorithm method to develop the deprogram tree. The 'NBClust' function was set to determine the best clustering methodology by choosing minimum clustering from 3 to max cuts of 7 and utilized all the indices.  The majority rule was implemented by the 'NBClust' function for Ward.d2, Ward.D, and the complete algorithm determined that the best clustering cut was four. However, k-means determined to be 3, but we determined that Ward.D2 is the best methodology thus far. 
 
@@ -441,7 +459,7 @@ Lastly, we developed a horizontal dendrogram using R focusing on Ward.D2 methodo
 \section{Results and Discussion}
 
 \subsection{Exploratory Data Analysis}
-First, we developed a correlation chart to quickly analyze if there is any great correlation between all the 28 numerical variables that may pertain to water accessibility. We recognized the strong and weak relationship by the size and color of the correlation plot is shown in \autoref{fig:cor-basic}, which indicates households with limited water service has the strongest and positive relationship with Households possessing a bicycle. Meanwhile, households using an improved water source has the strongest and negative relationship with households using an unimproved water source. This initial finding results indicated that the initial variables are logical and can give us insight into further understanding and the relationship between these variables. 
+A correlation chart was used to assess strong correlations between the 28 numerical variables that may pertain to water accessibility \autoref{fig:cor-basic}. Households with limited water service has the strongest and positive relationship with households possessing a bicycle. Meanwhile, households using an improved water source has the strongest and negative relationship with households using an unimproved water source. This initial finding results indicated that the initial variables are logical and can give us insight into further understanding and the relationship between these variables. 
 
 \begin{figure}[h!]
   \centering
@@ -459,6 +477,7 @@ As we continued to study further upon the correlations of the variables, we used
   \caption{Advanced Correlation Graph of Numerical Variables}
   \label{fig:cor-plot}
 \end{figure}
+
 Additionally, we wanted to explore if the modes of transportation variables have any relationship with potential water variables. Therefore, we investigated by developing more correlation plots relating transportation variables with water accessibility variables which are shown in \autoref{fig:transporation-time}, \autoref{fig:transporation-water-one}, \autoref{fig:transporation-water-two}. There is a significant positive relationship between households possessing a private car and households with water on the premises as shown in \autoref{fig:transporation-time}. There is also is a significant negative relationship between households possessing a private car with households with water 30 minutes or less away round trip and households with water more than 30 minutes away round trip with a p-value of less than 0.001. This information is essential to investigate further why this is the global trend. 
 
 
@@ -468,6 +487,7 @@ Additionally, we wanted to explore if the modes of transportation variables have
   \caption{Advanced Correlation Graph of Modes of Transportation and Time}
   \label{fig:transporation-time}
 \end{figure}
+
 \autoref{fig:transporation-water-one} shows that Households possessing a motorcycle has a positive correlation with Households using a tube well/borehole and Households using rainwater with a p-value of less than 0.01. Similar to the previous analysis, there is a relationship between a mode of transportation to retrieve potential water sources. \autoref{fig:transporation-water-two} also shows that households possessing an animal-drawn cart have a positive and strong relationship with households using unprotected well water with a p-value of less than 0.001. The results demonstrate that different modes of transportation factor into the accessibility of retrieving water sources on a global scale, therefore, there should be consideration of these variables to increase access to improved water sources. 
 \begin{figure}[h!]
   \centering
