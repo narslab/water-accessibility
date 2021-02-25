@@ -272,31 +272,57 @@ The journal articles were missing what modes of transportation may enhance water
 \section{Methods}
 %\hl{In this section, describe the data sources and the variables, along with data preparation procedures, variable selection criteria, etc. You should have a table summarizing the water accessibility variables and their definitions. Another table can summarize the explanatory variables (e.g. transportation-related, income-related, etc). Also discuss the number of countries, etc. I've started a table as an example. You can add other columns if needed.}
 \subsection{Data Sources}
-Data for this study were collected from the Demographic Health Survey (DHS) program, which is . We used the STATCompiler tool available from the DHS Program to develop customized tables on indicators related to  water, transportation, and wealth from 78 countries between 1990-2019.
+Data for this study were collected from the Demographic Health Survey (DHS) program, which is a program that has collected, analyzed, and distributed accurate and representative data on population, health, HIV, and nutrition through more than 400 surveys in over 90 countries. DHS the program uses a wide range of monitoring and impact evaluation indicators in the areas of population, health, and nutrition. Also, Standard DHS Surveys have high sample sizes (between 5,000 and 30,000 households) and are administered about every 5 years, to enable comparisons over time. DHS program also uses Malaria Indicator Surveys (MIS) is a survey where they provide data on bed-net ownership and use inhibition of malaria during pregnancy, and timely and adequate treatment of fever in young children. In many cases, bio-marker experiments for malaria and anemia are also included. We used the STAT-Compiler tool available from the DHS Program to develop customized tables on indicators related to water, transportation, and wealth from 78 countries between 1990-2019.
 
-We preprocessed the data by differentiating the different surveys collected by the DHS program between DHS and Malaria Indicators Survey (MIS) through excel. After, we used R to develop and simplify the table with the most recent surveys for the most up to date analysis for the 78 countries. There were two sets of data of population and households. Therefore, we decided to remove the population data from the table to simplify because population and households data were identical. 
+We preprocessed the data, and we recognized that there were three different surveys collected by the DHS program via excel. They are DHS, MIS, and AIDS Indicator Survey (AIS). After, we used R to develop an algorithm to find the most recent surveys and showed results for 78 countries.  We also simplified the variables titles into four character acronyms to recognize the different 28 variables quickly. We used the household data only. The STAT-compiler collected the aggregated data by the 78 countries 
 
-We only preserved variables where less than 50\% of values were missing. Ultimately, simplified data frame was 76 countries by 28 variables. After, two different tables are generated where one focused on the water accessibility variables and a explanatory variables. From the remaining variables, we selected 11 which related to water accessibility.  These included: types of water source (piped into dwelling, public tap/standpipe, tube well/borehole, protected well, protected spring, rainwater, unprotected well, unprotected spring, surface water), and time to water source (less than 30 minutes, more than 30 minutes) \citep{price2019difference} \autoref{tab:summary-wa}. Remaining variables related to wealth and transportation were used as an explanatory variables in the model \autoref{tab:summary-var}. 
+We preserved 28 variables from 78 where less than 50\% of values were missing and the population survey data were removed because they were similar to the household surveys. Ultimately, the simplified data frame was 78 countries by 28 variables. After the simplification, two separate tables are distinguished within the 28 variables. One focused on the water accessibility variables and the other focused on the explanatory variables \citep{price2019difference}. From the remaining variables, we selected 22 which related to water accessibility.  These included: types of water source (improved water source,
+piped into dwelling, piped into yard/plot,
+ public tap/standpipe, tube well/borehole, protected well, protected spring, rainwater, unimproved water source, unprotected well, unprotected spring, cart with small tank/drum, tanker truck, bottled water, other water source, surface water), time to water source (less than 30 minutes, more than 30 minutes), and premise to water source (water on the premises, improved water source on the premises, basic water service, limited water service) \autoref{tab:summary-wa}. Remaining variables related to wealth and transportation were used as an explanatory variables in the model \autoref{tab:summary-var}. 
+
 \begin{table}[h!]
   \centering
   \begin{tabular}{p{1in} p{3in} p{2in}}\toprule
     \bf Variable & \bf Description & \bf Notes \\\midrule
+\texttt{imws} & Improved water source
+ & 
+ \\\midrule
+ \texttt{phom} & Piped into dwelling &
+ \\\midrule
+ \texttt{pipy} & Water piped into yard/plot
+&
+\\\midrule
     \texttt{ptap} &  Public tap/standpipe
  & 
  \\\midrule
  \texttt{bore} & Tube well/borehole & 
 \\\midrule
+\texttt{pwel} & Protected well
+& 
+\\\midrule
 \texttt{pspr} & Protected spring
 & 
+\\\midrule
+
+\texttt{rain} & Rainwater
+& 
+\\\midrule
+ \texttt{uiws} & Unimproved water source & 
+\\\midrule
+\texttt{uwel} & Unprotected well water
+&
 \\\midrule
 \texttt{uspr} & Unprotected spring
 & 
 \\\midrule
-\texttt{pwel} & Protected well
-& 
+
+ \texttt{truc} & Tanker truck & 
 \\\midrule
-\texttt{uwel} & Unprotected well water
-&
+ \texttt{ctan} & Cart with tank & 
+\\\midrule
+ \texttt{bott} & Bottled water & Drinking water is bottled water/demi john.
+\\\midrule
+ \texttt{othw} & Other water source & 
 \\\midrule
 \texttt{surw} & Surface water
 & 
@@ -306,28 +332,9 @@ We only preserved variables where less than 50\% of values were missing. Ultimat
 \\\midrule 
 \texttt{tmor} & Water more than 30 minutes away round trip & 
 \\\midrule
-\texttt{rain} & Rainwater
-& 
-\\\midrule
-\texttt{phom} & Piped into dwelling
-
- \\\midrule
-\texttt{imws} & Improved water source
+ \texttt{watp} & Water on the premises
  & 
  \\\midrule
-\texttt{pipy} & Water piped into yard/plot
-&
-\\\midrule
- \texttt{truc} & Tanker truck & 
-\\\midrule
- \texttt{cart} & Cart with tank & 
-\\\midrule
- \texttt{bott} & Bottled water & Drinking water is bottled water/demi john.
-\\\midrule
- \texttt{uiws} & Unimproved water source & 
-\\\midrule
- \texttt{othw} & Other water source & 
-\\\midrule
  \texttt{iwsp} & Improved water source on the premises & The de jure population living in households with an improved water source on the premises.
 \\\midrule
  \texttt{basw} & Basic water service
@@ -335,9 +342,6 @@ We only preserved variables where less than 50\% of values were missing. Ultimat
 \\\midrule
  \texttt{liws} & Limited water service
  & Limited water service, defined as an improved water source with round-trip collection time greater than 30 minutes.
-\\\midrule
- \texttt{watp} & Water on the premises
- & 
  \\\bottomrule
   \end{tabular}
   \caption{Summary of water accessibility variables (National Household usage Averages measured as percentage for Main Drinking Source)}
@@ -374,17 +378,16 @@ We only preserved variables where less than 50\% of values were missing. Ultimat
  & (people per sq. km of land area)  [EN.POP.DNST]
 \\\midrule
  \texttt{land} & Land area 
-
  & (sq. km) [AG.LND.TOTL.K2]
 \\\midrule
- \texttt{lita} & Boat with a motor
- & 
+ \texttt{lita} & Literacy rate, adult total 
+ & (\% of people ages 15 and above) [SE.ADT.LITR.ZS]
 \\\midrule
- \texttt{lity} & Boat with a motor
- & 
+ \texttt{lity} & Literacy rate, youth 
+ & (ages 15-24), gender parity index (GPI) [SE.ADT.1524.LT.FM.ZS]
 \\\midrule
- \texttt{mori} & Boat with a motor
- & 
+ \texttt{mori} & Mortality rate, under-5 
+ & (per 1,000 live births) [SH.DYN.MORT]
 \\\midrule
  \texttt{wigc} & Wealth index Gini coefficient
  & The Gini coefficient indicates the level of concentration of wealth in the country.
