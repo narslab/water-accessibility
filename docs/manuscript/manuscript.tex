@@ -284,9 +284,6 @@ piped into dwelling, piped into yard/plot,
   \centering
   \begin{tabular}{p{1in} p{3in} p{2in}}\toprule
     \bf Variable & \bf Description & \bf Notes \\\midrule
-\texttt{imws} & Improved water source
- & 
- \\\midrule
  \texttt{phom} & Piped into dwelling &
  \\\midrule
  \texttt{pipy} & Water piped into yard/plot
@@ -306,8 +303,6 @@ piped into dwelling, piped into yard/plot,
 
 \texttt{rain} & Rainwater
 & 
-\\\midrule
- \texttt{uiws} & Unimproved water source & 
 \\\midrule
 \texttt{uwel} & Unprotected well water
 &
@@ -334,14 +329,6 @@ piped into dwelling, piped into yard/plot,
 \\\midrule
  \texttt{watp} & Water on the premises
  & 
- \\\midrule
- \texttt{iwsp} & Improved water source on the premises & The de jure population living in households with an improved water source on the premises.
-\\\midrule
- \texttt{basw} & Basic water service
- & Defined as an improved water source with either water on the premises or round-trip collection time is 30 minutes or less.
-\\\midrule
- \texttt{liws} & Limited water service
- & Limited water service, defined as an improved water source with round-trip collection time greater than 30 minutes.
  \\\bottomrule
   \end{tabular}
   \caption{Summary of water accessibility variables (National Household usage Averages measured as percentage for Main Drinking Source)}
@@ -401,7 +388,7 @@ piped into dwelling, piped into yard/plot,
  \subsection*{Summary of variables}
 %\hl{Here, you show and discuss the data distributions (e.g. histograms, correlation plots, etc)}
 
-Across 78 countries in this study, the data provides 28 numerical variables and four descriptive variables. The majority of the data is from 2010 - 2020 as shown in \autoref{fig:year}. Therefore, we can analyze the global condition of water accessibility by utilizing the most up to date surveys. Most of the variables are related to water accessibility by their locations, time, and water resources. This also allows us to find water accessibility predictor variables and new clustering graphs. 
+Across 78 countries in this study, the data provides 28 quantitative variables and three descriptive variables such as the country names, survey type, and survey year. The majority of the data is from 2010 - 2020 as shown in \autoref{fig:year}. Therefore, we can analyze the global condition of water accessibility by utilizing the most up-to-date surveys. Most of the variables are related to water accessibility by their locations, time, and water resources. This also allows us to find water accessibility predictor variables and new clustering graphs. 
 
 \begin{figure}[h!]
   \centering
@@ -412,11 +399,12 @@ Across 78 countries in this study, the data provides 28 numerical variables and 
 
 
 \subsection{Cluster analysis}
-We selected 11 variables that describe water accessibility of 78 countries around the world \citep{price2019difference}. Next, we used clustering, an unsupervised machine learning method to identify and group water accessibility variables in a large data set to understand and make inferences using R. Clustering ultimately can continue to assist in discovering the water accessibility predictor variables. 
+We selected 22 variables that describe water accessibility of 78 countries around the world \citep{price2019difference}. Next, we used clustering, an unsupervised machine learning method to identify and group water accessibility variables in a large data set to understand and make inferences using R. Clustering ultimately can continue to assist in discovering the water accessibility predictor variables. 
 
-First, we used different clustering algorithms to determine the best clustering results. We tested and categorized differently by using single, average, complete, ward.D, and ward.D2 methods to develop clustering dendrogram. Then, we analyzed by determining the best hierarchical relationship of each of the methods by observing the tree diagram itself; more even distributions of each tree are interpreted as optimal clustering methods. We determined that ward.d2 had most even distribution, verified through the use of 'NBClust' to determine the best algorithm as well as the best cut or groupings for the clustering methods as shown in \autoref{fig:optimal-clusters}. 
+First, we used different clustering algorithms to determine the best clustering results. We tested and clustered using different cluster methodology by utilizing single, average, complete, ward.D, and ward.D2 methods to develop initial clustering dendrogram. Then, we analyzed by determining the best hierarchical relationship of each of the methods by observing the tree diagram itself; more even distributions of each tree are interpreted as optimal clustering methods. We determined that ward.d2 had the evenest distribution, verified through the use of 'NBClust' to determine the best algorithm as well as the best cut or groupings for the clustering methods as shown in \autoref{fig:optimal-clusters}. 
 
-We compared Ward.D2, Ward.D, complete, and k-means algorithm methods to determine the best cuts, and also to confirm that Ward.D2 was the best clustering algorithm method to develop the deprogram tree. The 'NBClust' function was set to determine the best clustering methodology by choosing minimum clustering from 3 to max cuts of 7 and utilized all the indices.  The majority rule was implemented by the 'NBClust' function for Ward.d2, Ward.D, and the complete algorithm determined that the best clustering cut was four. However, k-means determined to be 3, but we determined that Ward.D2 is the best methodology thus far. 
+We compared Ward.D2, Ward.D, complete, and k-means algorithm methods to determine the best cuts, and also to confirm that Ward.D2 was the best clustering algorithm method to develop the deprogram tree. The 'NBClust' function was set to determine the best clustering methodology by choosing minimum clustering from 3 to max cuts of 7 and utilized all the indices.NBClust function in R is the 30 algorithm indices for defining the number of clusters and proposes to the user the best clustering design from the different outcomes acquired by diversifying all combinations of many clusters, distance measures, and clustering methods.  Therefore, NBClust determines the best clustering cut for the different methods by determining the mode of the cut numbers which then is called the majority rule.
+The majority rule was implemented by the 'NBClust' function for Ward.d2, Ward.D, and the complete algorithm determined that the best clustering cut was four. While, k-means method's majority rule is determined to be three cuts, but we determined that Ward.D2 is the best methodology due to the random nature of the k-mean clustering method. 
 
 Next, we compared the best indices values for different algorithm solving methodology to determine the best cuts to confirm that Ward.D2 is the best methodology. Once again, we determined that Ward.D2 was the best algorithm and learned that the best cut is four trees by analyzing within the different indices values of different algorithm theories. We compared the values by choosing KL, Ratkowsky, and Marriot values to compare what is the best cut for different clustering methods as shown in \autoref{fig:optimal}. 
 
