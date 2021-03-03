@@ -276,60 +276,60 @@ Data for this study were collected from the Demographic Health Survey (DHS) prog
 
 We also used World Bank's database to gain additional explanatory variable data for this study. World Bank (WB) provides over 200,000 published documents to understand the development policies and programs globally. Their reports, working papers, documents, and primary data are free to the public. WB DataBank is an analysis and visualization instrument that contains examples of time series data on many topics. We generated tables to analyze them by R.  We used World Development Indicators (WDI) within the DataBank is the primary World Bank collection of development indicators, organized from officially-recognized international sources. It exhibits the most current, accurate global development, and available data includes national, regional, and global estimates. We collected the 2018 surveys for the 73 countries for the following variables mentioned in \autoref{tab:summary-var}. 
 
-We preprocessed the data, and we recognized that there were three different surveys collected by the DHS program via excel. They are DHS, MIS, and AIDS Indicator Survey (AIS). After, we used R to develop an algorithm to find the most recent surveys and showed results for 78 countries.  We also simplified the variables titles into four character acronyms to recognize the different 28 variables quickly. We used the household data only. The STAT-compiler collected the aggregated data by the 78 countries 
+We preprocessed the data, and we recognized that there were three different surveys collected by the DHS program via excel. They are DHS, MIS, and AIDS Indicator Survey (AIS). After, we used R to develop an algorithm to find the most recent surveys and showed results for 73 countries.  We also simplified the variables titles into four character acronyms to recognize the different 28 variables quickly. We used the household data only. The STAT-compiler collected the aggregated data by the 73 countries 
 
-We preserved 28 variables from 73 countries where less than 50\% of values were missing and the population survey data were removed because they were similar to the household surveys. Ultimately, the simplified data frame was 78 countries by 28 variables. After the simplification, two separate tables are distinguished within the 28 variables. One focused on the water accessibility variables and the other focused on the explanatory variables \citep{price2019difference}. From the remaining variables, we selected 17 which related to water accessibility.  These included: types of water source (piped into dwelling, piped into yard/plot,
+We preserved 28 variables from 73 countries where less than 50\% of values were missing and the population survey data were removed because they were similar to the household surveys. Ultimately, the simplified data frame was 73 countries by 28 variables. After the simplification, two separate tables are distinguished within the 28 variables. One focused on the water accessibility variables and the other focused on the explanatory variables \citep{price2019difference}. From the remaining variables, we selected 17 which related to water accessibility.  These included: types of water source (piped into dwelling, piped into yard/plot,
  public tap/standpipe, tube well/borehole, protected well, protected spring, rainwater, unprotected well, unprotected spring, cart with small tank/drum, tanker truck, bottled water, other water source, surface water), time to water source (less than 30 minutes, more than 30 minutes), and premise to water source (water on the premises) \autoref{tab:summary-wa}. Remaining variables related to wealth and transportation were used as an explanatory variables in the model \autoref{tab:summary-var}. 
 
 \begin{table}[h!]
   \centering
   \begin{tabular}{p{1in} p{3in} p{2in}}\toprule
     \bf Variable & \bf Description & \bf Notes \\\midrule
- \texttt{phom} & Piped into dwelling & DHS Program Surveys
+ \texttt{phom} & Piped into dwelling & 
  \\\midrule
  \texttt{pipy} & Water piped into yard/plot
-& DHS Program Surveys
+& 
 \\\midrule
     \texttt{ptap} &  Public tap/standpipe
- & DHS Program Surveys
+ & 
  \\\midrule
  \texttt{bore} & Tube well/borehole & 
 \\\midrule
 \texttt{pwel} & Protected well
-& DHS Program Surveys
+& 
 \\\midrule
 \texttt{pspr} & Protected spring
-& DHS Program Surveys
+& 
 \\\midrule
 
 \texttt{rain} & Rainwater
-& DHS Program Surveys
+& 
 \\\midrule
 \texttt{uwel} & Unprotected well water
-& DHS Program Surveys
+&
 \\\midrule
 \texttt{uspr} & Unprotected spring
-& DHS Program Surveys
+& 
 \\\midrule
 
- \texttt{truc} & Tanker truck & DHS Program Surveys
+ \texttt{truc} & Tanker truck & 
 \\\midrule
- \texttt{ctan} & Cart with tank & DHS Program Surveys
+ \texttt{ctan} & Cart with tank & 
 \\\midrule
- \texttt{bott} & Bottled water & Drinking water is bottled water/demi john (DHS Program Surveys).
+ \texttt{bott} & Bottled water & Drinking water is bottled water/demi john.
 \\\midrule
- \texttt{othw} & Other water source & DHS Program Surveys
+ \texttt{othw} & Other water source & 
 \\\midrule
 \texttt{surw} & Surface water
-& DHS Program Surveys
+& 
 \\\midrule
 \texttt{tles} & Water 30 minutes or less away round trip
-& DHS Program Surveys
+& 
 \\\midrule 
 \texttt{tmor} & Water more than 30 minutes away round trip & DHS Program Surveys
 \\\midrule
  \texttt{watp} & Water on the premises
- & DHS Program Surveys
+ & 
  \\\bottomrule
   \end{tabular}
   \caption{Summary of water accessibility variables (National Household usage Averages measured as percentage for Main Drinking Source)}
@@ -389,7 +389,7 @@ We preserved 28 variables from 73 countries where less than 50\% of values were 
  \subsection*{Summary of variables}
 %\hl{Here, you show and discuss the data distributions (e.g. histograms, correlation plots, etc)}
 
-Across 78 countries in this study, the data provides 28 quantitative variables and three descriptive variables such as the country names, survey type, and survey year. The majority of the data is from 2010 - 2020 as shown in \autoref{fig:year}. Therefore, we can analyze the global condition of water accessibility by utilizing the most up-to-date surveys. Most of the variables are related to water accessibility by their locations, time, and water resources. This also allows us to find water accessibility predictor variables and new clustering graphs. 
+Across 73 countries in this study, the data provides 28 quantitative variables and three descriptive variables such as the country names, survey type, and survey year. The majority of the data is from 2010 - 2020 as shown in \autoref{fig:year}. Therefore, we can analyze the global condition of water accessibility by utilizing the most up-to-date surveys. Most of the variables are related to water accessibility by their locations, time, and water resources. This also allows us to find water accessibility predictor variables and new clustering graphs. 
 
 \begin{figure}[h!]
   \centering
@@ -400,7 +400,7 @@ Across 78 countries in this study, the data provides 28 quantitative variables a
 
 
 \subsection{Cluster analysis}
-We selected 22 variables that describe water accessibility of 78 countries around the world \citep{price2019difference}. Next, we used clustering, an unsupervised machine learning method to identify and group water accessibility variables in a large data set to understand and make inferences using R. Clustering ultimately can continue to assist in discovering the water accessibility predictor variables. 
+We selected 17 variables that describe water accessibility of 73 countries around the world \citep{price2019difference}. Next, we used clustering, an unsupervised machine learning method to identify and group water accessibility variables in a large data set to understand and make inferences using R. Clustering ultimately can continue to assist in discovering the water accessibility predictor variables. 
 
 First, we used different clustering algorithms to determine the best clustering results. We tested and clustered using different cluster methodology by utilizing single, average, complete, ward.D, and ward.D2 methods to develop initial clustering dendrogram. Then, we analyzed by determining the best hierarchical relationship of each of the methods by observing the tree diagram itself; more even distributions of each tree are interpreted as optimal clustering methods. We determined that ward.d2 had the evenest distribution, verified through the use of 'NBClust' to determine the best algorithm as well as the best cut or groupings for the clustering methods as shown in \autoref{fig:optimal-clusters}. 
 
