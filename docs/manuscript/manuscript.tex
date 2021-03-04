@@ -326,7 +326,7 @@ We preserved 28 variables from 73 countries where less than 50\% of values were 
 \texttt{tles} & Water 30 minutes or less away round trip
 & 
 \\\midrule 
-\texttt{tmor} & Water more than 30 minutes away round trip & DHS Program Surveys
+\texttt{tmor} & Water more than 30 minutes away round trip & 
 \\\midrule
  \texttt{watp} & Water on the premises
  & 
@@ -378,7 +378,7 @@ We preserved 28 variables from 73 countries where less than 50\% of values were 
  & World Bank Data  (per 1,000 live births) [SH.DYN.MORT]
 \\\midrule
  \texttt{wigc} & Wealth index Gini coefficient
- & The Gini coefficient indicates the level of concentration of wealth in the country (World Bank Data).
+ & The Gini coefficient indicates the level of concentration of wealth in the country (DHS Program).
  
   \\\bottomrule
   \end{tabular}
@@ -468,6 +468,14 @@ As we continued to study further upon the correlations of the variables, we used
   \includegraphics[width=.7\textwidth]{adv-cor-plot}
   \caption{Advanced Correlation Graph of Water Variables}
   \label{fig:cor-plot}
+\end{figure}
+Next, we studied the explanatory variables that we collected and extracted from the World Bank Data. 
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.7\textwidth]{cor-wb}
+  \caption{Advanced Correlation Graph of World Bank Explanatory Variables}
+  \label{fig:cor-wb}
 \end{figure}
 
 Additionally, we wanted to explore if the modes of transportation variables have any relationship with potential water variables. Therefore, we investigated by developing more correlation plots relating transportation variables with water accessibility variables which are shown in \autoref{fig:transporation-time}, \autoref{fig:transporation-water-one}, \autoref{fig:transporation-water-two}. There is a significant positive relationship between households possessing a private car and households with water on the premises as shown in \autoref{fig:transporation-time}. There is also is a significant negative relationship between households possessing a private car with households with water 30 minutes or less away round trip and households with water more than 30 minutes away round trip with a p-value of less than 0.001. This information is essential to investigate further why this is the global trend. 
