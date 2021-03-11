@@ -274,7 +274,7 @@ The journal articles were missing what modes of transportation may enhance water
 \subsection{Data Sources}
 Data for this study were collected from the Demographic Health Survey (DHS) program, which is a program that has collected, analyzed, and distributed accurate and representative data on population, health, HIV, and nutrition through more than 400 surveys in over 90 countries \citep{statcompiler}. DHS the program uses a wide range of monitoring and impact evaluation indicators in the areas of population, health, and nutrition. Also, Standard DHS Surveys have high sample sizes (between 5,000 and 30,000 households) and are administered about every 5 years, to enable comparisons over time. DHS program also uses Malaria Indicator Surveys (MIS) is a survey where they provide data on bed-net ownership and use inhibition of malaria during pregnancy, and timely and adequate treatment of fever in young children. In many cases, bio-marker experiments for malaria and anemia are also included. We used the STAT-Compiler tool available from the DHS Program to develop customized tables on indicators related to water, transportation, and wealth from 73 countries between 2000-2019 \citep{statcompiler}.
 
-We also used World Bank's database to gain additional explanatory variable data for this study. World Bank (WB) provides over 200,000 published documents to understand the development policies and programs globally. Their reports, working papers, documents, and primary data are free to the public. WB DataBank is an analysis and visualization instrument that contains examples of time series data on many topics. We generated tables to analyze them by R.  We used World Development Indicators (WDI) within the DataBank is the primary World Bank collection of development indicators, organized from officially-recognized international sources. It exhibits the most current, accurate global development, and available data includes national, regional, and global estimates. We collected the 2018 surveys for the 73 countries for the following variables mentioned in \autoref{tab:summary-var}. 
+We also used World Bank's database to gain additional explanatory variable data for this study. World Bank (WB) provides over 200,000 published documents to understand the development policies and programs globally. Their reports, working papers, documents, and primary data are free to the public. WB DataBank is an analysis and visualization instrument that contains examples of time series data on many topics. We generated tables to analyze them by R.  We used World Development Indicators (WDI) within the DataBank is the primary World Bank collection of development indicators, organized from officially-recognized international sources. It exhibits the most current, accurate global development, and available data includes national, regional, and global estimates. We collected the most data available year (2018 and 2014) surveys for the 73 countries for the following variables mentioned in \autoref{tab:summary-var}. 
 
 We preprocessed the data, and we recognized that there were three different surveys collected by the DHS program via excel. They are DHS, MIS, and AIDS Indicator Survey (AIS). After, we used R to develop an algorithm to find the most recent surveys and showed results for 73 countries.  We also simplified the variables titles into four character acronyms to recognize the different 28 variables quickly. We used the household data only. The STAT-compiler collected the aggregated data by the 73 countries 
 
@@ -376,6 +376,10 @@ We preserved 28 variables from 73 countries where less than 50\% of values were 
 \\\midrule
  \texttt{mori} & Mortality rate, under-5 
  & World Bank Data  (per 1,000 live births) [SH.DYN.MORT]
+\\\midrule
+ \texttt{prec} & Average precipitation in depth (mm per year)
+ & World Bank Data  Average precipitation in depth (mm per year)
+ [AG.LND.PRCP.MM]
 \\\midrule
  \texttt{wigc} & Wealth index Gini coefficient
  & The Gini coefficient indicates the level of concentration of wealth in the country (DHS Program).
@@ -506,6 +510,7 @@ Additionally, we wanted to explore if the modes of transportation variables have
 There is a problem of people not available to retrieve water quickly and there is a collection burden which is necessary to increase the water quality to improve many people's health and quality of life \citep{cassivi2018access}. These initial findings can allow us to research into what are the major factors of water accessibility for the 76 countries by developing clustering and determining the water accessibility variable predictors. A future study could use the water accessibility variable predictors to implement policies and experiment if it improved water accessibility for the community. This would be a necessary implementation to invest to improve their access to water to reach universal access by 2030.
 
 
+\subsection{Factor Analysis}
 
 \subsection{Water accessibility typologies}
 
