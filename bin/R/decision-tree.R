@@ -52,10 +52,10 @@ df$gdpp <- df$cgdp/df$tpop  ## GDP per capita
 df <- subset(df, select = -cgdp)
 
 #scaling the world bank data similar to DHS aggregation out of 100
-df.wb <- df[,c(10:16)]
-df.wb <- data.frame(lapply(df.wb, function(x) scale(x, center = FALSE, scale = max(x, na.rm = TRUE)/100)))
-df.scale <- cbind(df, df.wb)
-df.scale <- df.scale[,c(1:8,15:21)]
+# df.wb <- df[,c(10:16)]
+# df.wb <- data.frame(lapply(df.wb, function(x) scale(x, center = FALSE, scale = max(x, na.rm = TRUE)/100)))
+# df.scale <- cbind(df, df.wb)
+# df.scale <- df.scale[,c(1:8,15:21)]
 
 
 #Giving unique names for the typology
