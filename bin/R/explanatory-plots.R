@@ -65,14 +65,14 @@ p <- ggplot(melted.df2, aes(Value, Score, color = clusters)) +
     theme_bw() +
     labs(title=, color = 'Typology') +
     geom_text_repel(
-        aes(label = Country), size = 2,
+        aes(label = Country), size = 3.5,
         force= .2,
         force_pull = 2,
         angle = 0,
-        fontface = 2,
+        fontface = 1,
         min.segment.length = 0.5,
         segment.linetype = 1,
-        max.overlaps = 3,show.legend=FALSE) +
+        max.overlaps = 4,show.legend=FALSE) +
     theme(text = element_text(size=16)) + #Font size
     theme(axis.text = element_text(size = 13)) + #All tick size  
     theme(axis.title = element_text(size = 18)) +  # Adjusting Axis Title  
