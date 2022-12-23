@@ -43,7 +43,7 @@ melted.df2
 variable_names <- c(`pcar` = 'Private Car Ownership (%)', 
                     `popd` = 'Population Density (log /sq. km)', 
                     `gdpp` = 'GDP per capita (2018 US$)',
-                    `wigc` = 'Gini Coefficient'
+                    `wigc` = 'Gini index'
                     )
 
 factor_names <-  c( 
@@ -60,7 +60,7 @@ par(mar = c(1,1,1,1))
 par(cex=1.4)
 p <- ggplot(melted.df2, aes(Value, Score, color = clusters)) + 
     geom_point(alpha=.85) +
-    geom_smooth(method = 'loess', color = 'steelblue', span = 1.2 ) + #formula = y ~ s(x, bs = "cs")
+    geom_smooth(method = 'loess', color = 'steelblue' ) +
     scale_color_manual(values=c('#8da0cb','#66c2a5', '#fc8d62')) +
     theme_bw() +
     labs(title=, color = 'Typology') +
@@ -72,19 +72,16 @@ p <- ggplot(melted.df2, aes(Value, Score, color = clusters)) +
         fontface = 2,
         min.segment.length = 0.5,
         segment.linetype = 1,
-        max.overlaps = 3,show.legend=FALSE) +
+        max.overlaps = 3) +
     theme(text = element_text(size=16)) + #Font size
-    theme(axis.text = element_text(size = 13)) + #All tick size  
-    theme(axis.title = element_text(size = 18)) +  # Adjusting Axis Title  
-    theme(legend.position="bottom") +
-    guides(fill=guide_legend(nrow=1), color = guide_legend(override.aes = list(size = 5)))
+    theme(axis.text = element_text(size = 14)) + #All tick size  
+    theme(axis.title = element_text(size = 18))  # Adjusting Axis Title  
 
 pdf(file = "../../docs/manuscript/pdf-image/explanatory-plots-grid.pdf",
     width     = 12,
-    height    = 16 )
+    height    = 14 )
 
 p + facet_grid(rows = vars(Factor), cols = vars(Variable), scales = 'free_x', 
-               labeller = labeller(Factor = as_labeller(factor_names), Variable = as_labeller(variable_names)))
+               labeller = labeller(Factor = as_labeller(factor_names), Variable = as_labeller(variable_names)) )
 
 dev.off()
-

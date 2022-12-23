@@ -114,7 +114,7 @@ colnames(var.imp)[2] = 'Importance'
 
 var.imp$Variable = c('Private Car Ownership (%)', 'Population Density (/sq. km)', 
           'GDP per capita (2018 US$)', 
-          'Gini Coefficient'
+          'Wealth Index (Gini Coefficient)'
           )
 
 #var.imp  = read_excel( "../../results/variable-importance.xlsx" ,sheet=1)
