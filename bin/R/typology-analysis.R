@@ -308,7 +308,7 @@ b
 dev.off()
 #########################################################################
 
-## TO FINISH
+## TO CLEAN UP
 ### Ranking
 df.wa <- read_excel("../../results/df-seven-scores.xlsx",sheet=1)
 # clean df at next save (2 cluster columns - only 1 needed; etc) #df also needs to be only water accessibility variable
@@ -316,11 +316,11 @@ df.wa["norm"] <- apply(df.wa[2:8], 1, function(x) sqrt(sum(x^2)) ) #assuming col
 # Ideally, df should just be the countries and the water access. variables ONLY. This, way, the code should then be:
 # df["norm"] <- apply(df, 1, function(x) sqrt(sum(x^2)) )          
 df.wa["distToCentroid"] = 0 # initialize           
-df.wa["clusters"] <- as.factor(dfsimple$clusters)
+df.wa["clusters"] <- as.factor(df.clusters$Cluster)
 #Turn into numeric to find centroids             
 # assuming centroiddf.wa is your vector of cluster centroids
 # copied this from your earlier notebook
-df.wa.aggregate <- aggregate(df.wa[,c(2:8)], list(clusters=dfsimple$clusters), mean)
+df.wa.aggregate <- aggregate(df.wa[,c(2:8)], list(clusters=df.clusters$Cluster), mean)
 df.wa.aggregate <- df.wa.aggregate[,c(1:7)]
 centroiddf.wa <- apply(df.wa.aggregate, 1, function(x) sqrt(sum(x^2)) ) #How close is each country to the cen-troid of the cluster                        
 df <- df.wa            
