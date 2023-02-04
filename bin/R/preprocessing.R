@@ -3,7 +3,7 @@ library(writexl)
 library(dplyr)
 
 
-df.dhs <- read_excel("../../data/tidy/Cumulative_Data.xlsx",sheet=1) #DHS
+df.dhs <- read_excel("../../data/tidy/DHS-Data-Dictionary.xlsx",sheet=1) #DHS
 df.se = read_excel("../../data/raw/Data_Extract_From_World_Development_Indicators.xlsx",sheet=1, n_max=218) # world bank socioeconomic explanatory variables (gdp, pop, etc)
 df.rain = read_excel("../../data/raw/Data_Extract_From_World_Development_Indicators-Average precipitation in depth (mm per year).xlsx",sheet=1,range="C1:E218")
 df.co2 = read_excel("../../data/raw/Data_Extract_From_World_Development_Indicators-CO2-2014.xlsx",sheet=1, n_max=218) # carbon dioxide emissions
